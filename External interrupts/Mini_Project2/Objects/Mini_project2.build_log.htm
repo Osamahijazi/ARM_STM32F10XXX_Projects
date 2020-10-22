@@ -1,0 +1,225 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: osama Windows, HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+D:\Keil.Workshop\Mini_Project2\Mini_project2.uvprojx
+Project File Date:  09/05/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+NVIC_Program.c(8): warning: In file included from...
+./NVIC_Interface.h(152): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_Program.c(9): warning: In file included from...
+./NVIC_Config.h(24): warning: no newline at end of file [-Wnewline-eof]
+#endif 
+       ^
+NVIC_Program.c(10): warning: In file included from...
+./NVIC_Private.h(54): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+NVIC_Program.c(114): warning: variable 'Local_uint8LocalResult' is used uninitialized whenever 'if' condition is false [-Wsometimes-uninitialized]
+        else if (Copy_uint8IntNumber <= MAX_POS_NUM){
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NVIC_Program.c(127): note: uninitialized use occurs here
+        return Local_uint8LocalResult;
+               ^~~~~~~~~~~~~~~~~~~~~~
+NVIC_Program.c(114): note: remove the 'if' if its condition is always true
+        else if (Copy_uint8IntNumber <= MAX_POS_NUM){
+             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NVIC_Program.c(107): note: initialize the variable 'Local_uint8LocalResult' to silence this warning
+        uint8 Local_uint8LocalResult ;
+                                    ^
+                                     = '\0'
+NVIC_Program.c(137): warning: implicit conversion loses integer precision: 'int' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        uint8 Local_uint8Priority =  ( Copy_uint8SubGroupPriority | Copy_uint8GroupPriority << (( Copy_uint32Group - 0X05FFA0300) / 256 ));
+              ~~~~~~~~~~~~~~~~~~~      ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+NVIC_Program.c(140): warning: result of comparison of unsigned expression >= 0 is always true [-Wtautological-unsigned-zero-compare]
+        if( Copy_uint8IntID >= 0 ){
+            ~~~~~~~~~~~~~~~ ^  ~
+NVIC_Program.c(142): warning: implicit conversion loses integer precision: 'int' to 'uint8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+                NVIC_IPR[Copy_uint8IntID]= Local_uint8Priority << 4 ;
+                                         ~ ~~~~~~~~~~~~~~~~~~~~^~~~
+7 warnings generated.
+compiling NVIC_Program.c...
+main.c(5): warning: In file included from...
+./SYSTIMER_Interface.h(26): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(6): warning: In file included from...
+./EXTI_Interface.h(79): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(7): warning: In file included from...
+./AFIO_Interface.h(33): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(8): warning: In file included from...
+./NVIC_Interface.h(152): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(9): warning: In file included from...
+./LED_DISPLAY.h(25): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(13): warning: no previous prototype for function 'LED_void_ANIMATION1' [-Wmissing-prototypes]
+void LED_void_ANIMATION1(void){
+     ^
+main.c(13): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED_void_ANIMATION1(void){
+^
+static 
+main.c(39): warning: no previous prototype for function 'LED_void_ANIMATION2' [-Wmissing-prototypes]
+void LED_void_ANIMATION2(void){
+     ^
+main.c(39): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED_void_ANIMATION2(void){
+^
+static 
+main.c(44): warning: no previous prototype for function 'LED_void_ANIMATION3' [-Wmissing-prototypes]
+void LED_void_ANIMATION3(void){
+     ^
+main.c(44): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED_void_ANIMATION3(void){
+^
+static 
+main.c(65): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+         GPIO_VoidSetPinDirection(GPIOB,PIN0,INPUT_FLOATING);
+                                             ^
+./GPIO_interface.h(46): note: expanded from macro 'INPUT_FLOATING'
+#define        INPUT_FLOATING            0b0100
+                                         ^
+main.c(66): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+         GPIO_VoidSetPinDirection(GPIOB,PIN1,INPUT_FLOATING);
+                                             ^
+./GPIO_interface.h(46): note: expanded from macro 'INPUT_FLOATING'
+#define        INPUT_FLOATING            0b0100
+                                         ^
+main.c(67): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+         GPIO_VoidSetPinDirection(GPIOB,PIN2,INPUT_FLOATING);
+                                             ^
+./GPIO_interface.h(46): note: expanded from macro 'INPUT_FLOATING'
+#define        INPUT_FLOATING            0b0100
+                                         ^
+main.c(89): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN0, OUTPUT_2MHZ_PP ); 
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(90): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN1, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(91): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN2, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(92): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN3, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(93): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN4, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(94): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN5, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(95): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN6, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(96): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN7, OUTPUT_2MHZ_PP );
+                                             ^
+./GPIO_interface.h(56): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(181): warning: no newline at end of file [-Wnewline-eof]
+         }
+          ^
+main.c(4): warning: In file included from...
+./GPIO_interface.h(68): warning: no previous extern declaration for non-static variable 'ERROR' [-Wmissing-variable-declarations]
+uint8 ERROR ;               /*THIS VARIABLE SHOULD HOLD A VALUE THAT INDICATE THE TYPE AND LOCATION OF ERROR ACCORDING TO THE FOLOOWING TABLE*/
+      ^
+./GPIO_interface.h(68): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8 ERROR ;               /*THIS VARIABLE SHOULD HOLD A VALUE THAT INDICATE THE TYPE AND LOCATION OF ERROR ACCORDING TO THE FOLOOWING TABLE*/
+^
+21 warnings generated.
+compiling main.c...
+linking...
+.\Objects\Mini_project2.axf: Error: L6200E: Symbol ERROR multiply defined (by main.o and gpio_program.o).
+Not enough information to list image symbols.
+Not enough information to list load addresses in the image map.
+Finished: 2 information, 0 warning and 1 error messages.
+".\Objects\Mini_project2.axf" - 1 Error(s), 28 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C4
+  .\RTE\_Target_1
+  C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\osama hejazi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_ld.s
+Target not created.
+Build Time Elapsed:  00:00:02
+</pre>
+</body>
+</html>

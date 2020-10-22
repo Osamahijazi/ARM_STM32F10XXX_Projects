@@ -1,0 +1,136 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: osama Windows, HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+D:\Keil.Workshop\Mini_Project3\OS_SCHEDULER.uvprojx
+Project File Date:  09/07/2020
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+main.c(3): warning: In file included from...
+./RCC_interface.h(22): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(5): warning: In file included from...
+./SYSTIMER_Interface.h(27): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(7): warning: In file included from...
+./LEDMRX_Interface.h(26): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+main.c(30): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN0,OUTPUT_2MHZ_PP);
+                                            ^
+./GPIO_interface.h(53): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(31): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN1,OUTPUT_2MHZ_PP);
+                                            ^
+./GPIO_interface.h(53): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(32): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+        GPIO_VoidSetPinDirection(GPIOA,PIN2,OUTPUT_2MHZ_PP);
+                                            ^
+./GPIO_interface.h(53): note: expanded from macro 'OUTPUT_2MHZ_PP'
+#define       OUTPUT_2MHZ_PP              0b0010
+                                          ^
+main.c(80): warning: no newline at end of file [-Wnewline-eof]
+        
+        ^
+7 warnings generated.
+compiling main.c...
+OS_Progam.c(9): warning: In file included from...
+./SYSTIMER_Interface.h(27): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+OS_Progam.c(11): warning: In file included from...
+./OS_Private.h(32): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+OS_Progam.c(12): warning: In file included from...
+./OS_Config.h(21): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+OS_Progam.c(11): warning: In file included from...
+./OS_Private.h(17): warning: padding struct 'Task' with 2 bytes to align 'Fun_Ptr' [-Wpadded]
+        void   (*Fun_Ptr)(void) ;
+                 ^
+OS_Progam.c(18): warning: incompatible pointer to integer conversion initializing 'uint16' (aka 'unsigned short') with an expression of type 'void *' [-Wint-conversion]
+static Task  OS_TASK[TASK_NUMBER] = {NULL} ;
+                                     ^~~~
+./OS_Private.h(11): note: expanded from macro 'NULL'
+#define NULL   (void*) 0 
+               ^~~~~~~~~
+OS_Progam.c(18): warning: missing field 'Fun_Ptr' initializer [-Wmissing-field-initializers]
+static Task  OS_TASK[TASK_NUMBER] = {NULL} ;
+                                         ^
+OS_Progam.c(18): warning: suggest braces around initialization of subobject [-Wmissing-braces]
+static Task  OS_TASK[TASK_NUMBER] = {NULL} ;
+                                     ^~~~
+                                     {   }
+./OS_Private.h(11): note: expanded from macro 'NULL'
+#define NULL   (void*) 0 
+               ^~~~~~~~~
+7 warnings generated.
+compiling OS_Progam.c...
+linking...
+Program Size: Code=1684 RO-data=252 RW-data=0 ZI-data=1688  
+FromELF: creating hex file...
+".\Objects\OS_SCHEDULER.axf" - 0 Error(s), 14 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C4
+  .\RTE\_Target_1
+  C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\osama hejazi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Source file:   Device\Source\ARM\startup_stm32f10x_ld.s
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\system_stm32f10x.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>

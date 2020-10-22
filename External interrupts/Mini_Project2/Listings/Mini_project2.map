@@ -1,0 +1,222 @@
+Component: ARM Compiler 6.14 Tool: armlink [5db06800]
+
+==============================================================================
+
+Section Cross References
+
+    exti_program.o(.ARM.exidx.text.EXTI_voidInit) refers to exti_program.o(.text.EXTI_voidInit) for [Anonymous Symbol]
+    exti_program.o(.ARM.exidx.text.EXTI_voidEnableEXTI) refers to exti_program.o(.text.EXTI_voidEnableEXTI) for [Anonymous Symbol]
+    exti_program.o(.ARM.exidx.text.EXTI_voidDisableEXTI) refers to exti_program.o(.text.EXTI_voidDisableEXTI) for [Anonymous Symbol]
+    exti_program.o(.ARM.exidx.text.EXTI_voidSwTrigger) refers to exti_program.o(.text.EXTI_voidSwTrigger) for [Anonymous Symbol]
+    exti_program.o(.ARM.exidx.text.EXTI_voidSignalLatch) refers to exti_program.o(.text.EXTI_voidSignalLatch) for [Anonymous Symbol]
+    exti_program.o(.text.EXTI0_voidSetCallBack) refers to exti_program.o(.bss.EXTI_CallBack.0) for EXTI_CallBack.0
+    exti_program.o(.ARM.exidx.text.EXTI0_voidSetCallBack) refers to exti_program.o(.text.EXTI0_voidSetCallBack) for [Anonymous Symbol]
+    exti_program.o(.text.EXTI1_voidSetCallBack) refers to exti_program.o(.bss.EXTI_CallBack.1) for EXTI_CallBack.1
+    exti_program.o(.ARM.exidx.text.EXTI1_voidSetCallBack) refers to exti_program.o(.text.EXTI1_voidSetCallBack) for [Anonymous Symbol]
+    exti_program.o(.text.EXTI2_voidSetCallBack) refers to exti_program.o(.bss.EXTI_CallBack.2) for EXTI_CallBack.2
+    exti_program.o(.ARM.exidx.text.EXTI2_voidSetCallBack) refers to exti_program.o(.text.EXTI2_voidSetCallBack) for [Anonymous Symbol]
+    exti_program.o(.text.EXTI0_IRQHandler) refers to exti_program.o(.bss.EXTI_CallBack.0) for EXTI_CallBack.0
+    exti_program.o(.ARM.exidx.text.EXTI0_IRQHandler) refers to exti_program.o(.text.EXTI0_IRQHandler) for [Anonymous Symbol]
+    exti_program.o(.text.EXTI1_IRQHandler) refers to exti_program.o(.bss.EXTI_CallBack.1) for EXTI_CallBack.1
+    exti_program.o(.ARM.exidx.text.EXTI1_IRQHandler) refers to exti_program.o(.text.EXTI1_IRQHandler) for [Anonymous Symbol]
+    exti_program.o(.text.EXTI2_IRQHandler) refers to exti_program.o(.bss.EXTI_CallBack.2) for EXTI_CallBack.2
+    exti_program.o(.ARM.exidx.text.EXTI2_IRQHandler) refers to exti_program.o(.text.EXTI2_IRQHandler) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_VoidSetPinDirection) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_VoidSetPinDirection) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_VoidSetPinDirection) refers to gpio_program.o(.text.GPIO_VoidSetPinDirection) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_voidSetPortDirection) refers to gpio_program.o(.text.GPIO_VoidSetPinDirection) for GPIO_VoidSetPinDirection
+    gpio_program.o(.ARM.exidx.text.GPIO_voidSetPortDirection) refers to gpio_program.o(.text.GPIO_voidSetPortDirection) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_VoidSetPinValue) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_VoidSetPinValue) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_VoidSetPinValue) refers to gpio_program.o(.text.GPIO_VoidSetPinValue) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_voidSetPortValue) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_voidSetPortValue) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_voidSetPortValue) refers to gpio_program.o(.text.GPIO_voidSetPortValue) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_VoidGetPinValue) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_VoidGetPinValue) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_VoidGetPinValue) refers to gpio_program.o(.text.GPIO_VoidGetPinValue) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_VoidGetPortValue) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_VoidGetPortValue) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_VoidGetPortValue) refers to gpio_program.o(.text.GPIO_VoidGetPortValue) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_voidTogglePinValue) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_voidTogglePinValue) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_voidTogglePinValue) refers to gpio_program.o(.text.GPIO_voidTogglePinValue) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_voidTogglePortValue) refers to gpio_program.o(.text.GPIO_voidTogglePinValue) for GPIO_voidTogglePinValue
+    gpio_program.o(.ARM.exidx.text.GPIO_voidTogglePortValue) refers to gpio_program.o(.text.GPIO_voidTogglePortValue) for [Anonymous Symbol]
+    gpio_program.o(.text.GPIO_voidLockPinConfig) refers to gpio_program.o(.bss.ERROR) for ERROR
+    gpio_program.o(.text.GPIO_voidLockPinConfig) refers to main.o(.bss.ERROR) for ERROR
+    gpio_program.o(.ARM.exidx.text.GPIO_voidLockPinConfig) refers to gpio_program.o(.text.GPIO_voidLockPinConfig) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_voidEnableInterrupt) refers to nvic_program.o(.text.NVIC_voidEnableInterrupt) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_voidDisableInterrupt) refers to nvic_program.o(.text.NVIC_voidDisableInterrupt) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_voidSetPendingFlag) refers to nvic_program.o(.text.NVIC_voidSetPendingFlag) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_voidClearPendingFlag) refers to nvic_program.o(.text.NVIC_voidClearPendingFlag) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_voidGetActiveFlag) refers to nvic_program.o(.text.NVIC_voidGetActiveFlag) for [Anonymous Symbol]
+    nvic_program.o(.ARM.exidx.text.NVIC_voidSetPriority) refers to nvic_program.o(.text.NVIC_voidSetPriority) for [Anonymous Symbol]
+    rcc_program.o(.ARM.exidx.text.RCC_InitysClock) refers to rcc_program.o(.text.RCC_InitysClock) for [Anonymous Symbol]
+    rcc_program.o(.ARM.exidx.text.RCC_VoidEnableClock) refers to rcc_program.o(.text.RCC_VoidEnableClock) for [Anonymous Symbol]
+    rcc_program.o(.ARM.exidx.text.RCC_VoidDisableClock) refers to rcc_program.o(.text.RCC_VoidDisableClock) for [Anonymous Symbol]
+    systimer_program.o(.ARM.exidx.text.STK_voidInit) refers to systimer_program.o(.text.STK_voidInit) for [Anonymous Symbol]
+    systimer_program.o(.ARM.exidx.text.STK_voidSetBusyWait) refers to systimer_program.o(.text.STK_voidSetBusyWait) for [Anonymous Symbol]
+    systimer_program.o(.ARM.exidx.text.STK_voidSetIntervalPeriodic) refers to systimer_program.o(.text.STK_voidSetIntervalPeriodic) for [Anonymous Symbol]
+    afio_program.o(.ARM.exidx.text.AFIO_VoidSetEXTIConfig) refers to afio_program.o(.text.AFIO_VoidSetEXTIConfig) for [Anonymous Symbol]
+    led_display.o(.text.DISPLAY_AllShiftLeft) refers to led_display.o(.bss.COUNTER1) for COUNTER1
+    led_display.o(.ARM.exidx.text.DISPLAY_AllShiftLeft) refers to led_display.o(.text.DISPLAY_AllShiftLeft) for [Anonymous Symbol]
+    led_display.o(.text.DISPLAY_AllShiftRight) refers to led_display.o(.bss.COUNTER2) for COUNTER2
+    led_display.o(.ARM.exidx.text.DISPLAY_AllShiftRight) refers to led_display.o(.text.DISPLAY_AllShiftRight) for [Anonymous Symbol]
+    led_display.o(.text.DISPLAY_HalfShiftRight) refers to systimer_program.o(.text.STK_voidSetBusyWait) for STK_voidSetBusyWait
+    led_display.o(.ARM.exidx.text.DISPLAY_HalfShiftRight) refers to led_display.o(.text.DISPLAY_HalfShiftRight) for [Anonymous Symbol]
+    led_display.o(.text.DISPLAY_AllLedON) refers to systimer_program.o(.text.STK_voidSetBusyWait) for STK_voidSetBusyWait
+    led_display.o(.ARM.exidx.text.DISPLAY_AllLedON) refers to led_display.o(.text.DISPLAY_AllLedON) for [Anonymous Symbol]
+    main.o(.text.LED_void_ANIMATION1) refers to led_display.o(.text.DISPLAY_AllShiftLeft) for DISPLAY_AllShiftLeft
+    main.o(.text.LED_void_ANIMATION1) refers to systimer_program.o(.text.STK_voidSetBusyWait) for STK_voidSetBusyWait
+    main.o(.text.LED_void_ANIMATION1) refers to led_display.o(.text.DISPLAY_AllShiftRight) for DISPLAY_AllShiftRight
+    main.o(.ARM.exidx.text.LED_void_ANIMATION1) refers to main.o(.text.LED_void_ANIMATION1) for [Anonymous Symbol]
+    main.o(.text.LED_void_ANIMATION2) refers to led_display.o(.text.DISPLAY_HalfShiftRight) for DISPLAY_HalfShiftRight
+    main.o(.ARM.exidx.text.LED_void_ANIMATION2) refers to main.o(.text.LED_void_ANIMATION2) for [Anonymous Symbol]
+    main.o(.text.LED_void_ANIMATION3) refers to led_display.o(.text.DISPLAY_AllLedON) for DISPLAY_AllLedON
+    main.o(.ARM.exidx.text.LED_void_ANIMATION3) refers to main.o(.text.LED_void_ANIMATION3) for [Anonymous Symbol]
+    main.o(.text.main) refers to rcc_program.o(.text.RCC_InitysClock) for RCC_InitysClock
+    main.o(.text.main) refers to rcc_program.o(.text.RCC_VoidEnableClock) for RCC_VoidEnableClock
+    main.o(.text.main) refers to systimer_program.o(.text.STK_voidInit) for STK_voidInit
+    main.o(.text.main) refers to gpio_program.o(.text.GPIO_VoidSetPinDirection) for GPIO_VoidSetPinDirection
+    main.o(.text.main) refers to nvic_program.o(.text.NVIC_voidEnableInterrupt) for NVIC_voidEnableInterrupt
+    main.o(.text.main) refers to exti_program.o(.text.EXTI_voidSignalLatch) for EXTI_voidSignalLatch
+    main.o(.text.main) refers to afio_program.o(.text.AFIO_VoidSetEXTIConfig) for AFIO_VoidSetEXTIConfig
+    main.o(.text.main) refers to main.o(.text.LED_void_ANIMATION1) for LED_void_ANIMATION1
+    main.o(.text.main) refers to exti_program.o(.text.EXTI0_voidSetCallBack) for EXTI0_voidSetCallBack
+    main.o(.text.main) refers to main.o(.text.LED_void_ANIMATION2) for LED_void_ANIMATION2
+    main.o(.text.main) refers to exti_program.o(.text.EXTI1_voidSetCallBack) for EXTI1_voidSetCallBack
+    main.o(.text.main) refers to main.o(.text.LED_void_ANIMATION3) for LED_void_ANIMATION3
+    main.o(.text.main) refers to exti_program.o(.text.EXTI2_voidSetCallBack) for EXTI2_voidSetCallBack
+    main.o(.text.main) refers to led_display.o(.text.DISPLAY_AllShiftLeft) for DISPLAY_AllShiftLeft
+    main.o(.text.main) refers to systimer_program.o(.text.STK_voidSetBusyWait) for STK_voidSetBusyWait
+    main.o(.text.main) refers to led_display.o(.text.DISPLAY_AllShiftRight) for DISPLAY_AllShiftRight
+    main.o(.text.main) refers to led_display.o(.text.DISPLAY_HalfShiftRight) for DISPLAY_HalfShiftRight
+    main.o(.text.main) refers to led_display.o(.text.DISPLAY_AllLedON) for DISPLAY_AllLedON
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    startup_stm32f10x_ld.o(STACK) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_ld.o(HEAP) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_ld.o(RESET) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_ld.o(RESET) refers to startup_stm32f10x_ld.o(STACK) for __initial_sp
+    startup_stm32f10x_ld.o(RESET) refers to startup_stm32f10x_ld.o(.text) for Reset_Handler
+    startup_stm32f10x_ld.o(RESET) refers to exti_program.o(.text.EXTI0_IRQHandler) for EXTI0_IRQHandler
+    startup_stm32f10x_ld.o(RESET) refers to exti_program.o(.text.EXTI1_IRQHandler) for EXTI1_IRQHandler
+    startup_stm32f10x_ld.o(RESET) refers to exti_program.o(.text.EXTI2_IRQHandler) for EXTI2_IRQHandler
+    startup_stm32f10x_ld.o(.text) refers (Special) to heapauxi.o(.text) for __use_two_region_memory
+    startup_stm32f10x_ld.o(.text) refers to system_stm32f10x.o(.text.SystemInit) for SystemInit
+    startup_stm32f10x_ld.o(.text) refers to __main.o(!!!main) for __main
+    startup_stm32f10x_ld.o(.text) refers to startup_stm32f10x_ld.o(HEAP) for Heap_Mem
+    startup_stm32f10x_ld.o(.text) refers to startup_stm32f10x_ld.o(STACK) for Stack_Mem
+    system_stm32f10x.o(.text.SystemInit) refers to system_stm32f10x.o(.text.SetSysClock) for SetSysClock
+    system_stm32f10x.o(.ARM.exidx.text.SystemInit) refers to system_stm32f10x.o(.text.SystemInit) for [Anonymous Symbol]
+    system_stm32f10x.o(.text.SetSysClock) refers to system_stm32f10x.o(.text.SetSysClockTo72) for SetSysClockTo72
+    system_stm32f10x.o(.ARM.exidx.text.SetSysClock) refers to system_stm32f10x.o(.text.SetSysClock) for [Anonymous Symbol]
+    system_stm32f10x.o(.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.data.SystemCoreClock) for SystemCoreClock
+    system_stm32f10x.o(.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.rodata.AHBPrescTable) for AHBPrescTable
+    system_stm32f10x.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_stm32f10x.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
+    system_stm32f10x.o(.ARM.exidx.text.SetSysClockTo72) refers to system_stm32f10x.o(.text.SetSysClockTo72) for [Anonymous Symbol]
+    __main.o(!!!main) refers to __rtentry.o(.ARM.Collect$$rtentry$$00000000) for __rt_entry
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for __rt_entry_li
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for __rt_entry_main
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$0000000C) for __rt_entry_postli_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000009) for __rt_entry_postsh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry2.o(.ARM.Collect$$rtentry$$00000002) for __rt_entry_presh_1
+    __rtentry.o(.ARM.Collect$$rtentry$$00000000) refers (Special) to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for __rt_entry_sh
+    __rtentry2.o(.ARM.Collect$$rtentry$$00000008) refers to boardinit2.o(.text) for _platform_post_stackheap_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) refers to libinit.o(.ARM.Collect$$libinit$$00000000) for __rt_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) refers to boardinit3.o(.text) for _platform_post_lib_init
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to main.o(.text.main) for main
+    __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) refers to exit.o(.text) for exit
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000001) for .ARM.Collect$$rtentry$$00000001
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$00000008) for .ARM.Collect$$rtentry$$00000008
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000A) for .ARM.Collect$$rtentry$$0000000A
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000B) for .ARM.Collect$$rtentry$$0000000B
+    __rtentry2.o(.ARM.exidx) refers to __rtentry2.o(.ARM.Collect$$rtentry$$0000000D) for .ARM.Collect$$rtentry$$0000000D
+    __rtentry4.o(.ARM.Collect$$rtentry$$00000004) refers to sys_stackheap_outer.o(.text) for __user_setup_stackheap
+    __rtentry4.o(.ARM.exidx) refers to __rtentry4.o(.ARM.Collect$$rtentry$$00000004) for .ARM.Collect$$rtentry$$00000004
+    sys_stackheap_outer.o(.text) refers to libspace.o(.text) for __user_perproc_libspace
+    sys_stackheap_outer.o(.text) refers to startup_stm32f10x_ld.o(.text) for __user_initial_stackheap
+    exit.o(.text) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for __rt_exit
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002E) for __rt_lib_init_alloca_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000002C) for __rt_lib_init_argv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001B) for __rt_lib_init_atexit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000021) for __rt_lib_init_clock_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000032) for __rt_lib_init_cpp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000030) for __rt_lib_init_exceptions_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000002) for __rt_lib_init_fp_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001F) for __rt_lib_init_fp_trap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000023) for __rt_lib_init_getenv_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000A) for __rt_lib_init_heap_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000011) for __rt_lib_init_lc_collate_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000013) for __rt_lib_init_lc_ctype_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000015) for __rt_lib_init_lc_monetary_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000017) for __rt_lib_init_lc_numeric_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000019) for __rt_lib_init_lc_time_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000004) for __rt_lib_init_preinit_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000E) for __rt_lib_init_rand_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000033) for __rt_lib_init_return
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000001D) for __rt_lib_init_signal_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$00000025) for __rt_lib_init_stdio_1
+    libinit.o(.ARM.Collect$$libinit$$00000000) refers (Special) to libinit2.o(.ARM.Collect$$libinit$$0000000C) for __rt_lib_init_user_alloc_1
+    libspace.o(.text) refers to libspace.o(.bss) for __libspace_start
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.Collect$$rtexit$$00000000) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for __rt_exit_exit
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for __rt_exit_ls
+    rtexit.o(.ARM.exidx) refers (Special) to rtexit2.o(.ARM.Collect$$rtexit$$00000002) for __rt_exit_prels_1
+    rtexit.o(.ARM.exidx) refers to rtexit.o(.ARM.Collect$$rtexit$$00000000) for .ARM.Collect$$rtexit$$00000000
+    libinit2.o(.ARM.Collect$$libinit$$00000010) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000012) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000014) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000016) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000018) refers to libinit2.o(.ARM.Collect$$libinit$$0000000F) for .ARM.Collect$$libinit$$0000000F
+    libinit2.o(.ARM.Collect$$libinit$$00000026) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    libinit2.o(.ARM.Collect$$libinit$$00000027) refers to argv_veneer.o(.emb_text) for __ARM_argv_veneer
+    rtexit2.o(.ARM.Collect$$rtexit$$00000003) refers to libshutdown.o(.ARM.Collect$$libshutdown$$00000000) for __rt_lib_shutdown
+    rtexit2.o(.ARM.Collect$$rtexit$$00000004) refers to sys_exit.o(.text) for _sys_exit
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000001) for .ARM.Collect$$rtexit$$00000001
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000003) for .ARM.Collect$$rtexit$$00000003
+    rtexit2.o(.ARM.exidx) refers to rtexit2.o(.ARM.Collect$$rtexit$$00000004) for .ARM.Collect$$rtexit$$00000004
+    argv_veneer.o(.emb_text) refers to no_argv.o(.text) for __ARM_get_argv
+    sys_exit.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_exit_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_exit_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    _get_argv_nomalloc.o(.text) refers (Special) to hrguard.o(.text) for __heap_region$guard
+    _get_argv_nomalloc.o(.text) refers to defsig_rtmem_outer.o(.text) for __rt_SIGRTMEM
+    _get_argv_nomalloc.o(.text) refers to sys_command.o(.text) for _sys_command_string
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000002) for __rt_lib_shutdown_cpp_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000007) for __rt_lib_shutdown_fp_trap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000F) for __rt_lib_shutdown_heap_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000010) for __rt_lib_shutdown_return
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000A) for __rt_lib_shutdown_signal_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$00000004) for __rt_lib_shutdown_stdio_1
+    libshutdown.o(.ARM.Collect$$libshutdown$$00000000) refers (Special) to libshutdown2.o(.ARM.Collect$$libshutdown$$0000000C) for __rt_lib_shutdown_user_alloc_1
+    sys_command.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_command_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_command_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig_rtmem_outer.o(.text) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_rtmem_outer.o(.text) refers to defsig_exit.o(.text) for __sig_exit
+    defsig_rtmem_formal.o(.text) refers to rt_raise.o(.text) for __rt_raise
+    rt_raise.o(.text) refers to __raise.o(.text) for __raise
+    rt_raise.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_exit.o(.text) refers to sys_exit.o(.text) for _sys_exit
+    defsig_rtmem_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    __raise.o(.text) refers to defsig.o(CL$$defsig) for __default_signal_handler
+    defsig_general.o(.text) refers to sys_wrch.o(.text) for _ttywrch
+    sys_wrch.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    sys_wrch_hlt.o(.text) refers (Special) to use_no_semi.o(.text) for __I$use$semihosting
+    sys_wrch_hlt.o(.text) refers (Special) to indicate_semi.o(.text) for __semihosting_library_function
+    defsig.o(CL$$defsig) refers to defsig_rtmem_inner.o(.text) for __rt_SIGRTMEM_inner
+    defsig_abrt_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_fpe_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_rtred_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_stak_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_pvfn_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_cppl_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_segv_inner.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+    defsig_other.o(.text) refers to defsig_general.o(.text) for __default_signal_display
+
