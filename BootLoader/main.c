@@ -1,99 +1,50 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
-#include "FPEC_interface.h"
 #include "RCC_interface.h"
-#include "GPIO_interface.h"
-#include "STK_Interface.h"
-#include "UART_interface.h"
+#include "GPIO_interface2.h"
+#include "FPEC_interface.h"
 #include "BL_Interface.h"
+#include "FEE2_Interface.h"
+#include "STK_interface.h"
+#include "Branch_Interface.h"
 
-void Parser_voidParseRecord(u8* Copy_u8BufData);
+int main(void)
+{
+	
+BR_VoidIinit(); //Init branch 
 
-volatile u8  u8RecBuffer[100]   ;
-volatile u8  u8RecCounter    = 0;
-volatile u8  u8TimeOutFlag   = 0;
-volatile u16 u16TimerCounter = 0;
-volatile u8  u8BLWriteReq    = 1;
+if( MODE == BL_MODE  ) 
+{
+	                                                   //Flag is BL MODE
+BL_VoidInit(); //Init BL
+	
+BL_VoidACK(); //BL Talk to Node
 
-typedef void (*Function_TYPE)(void);
+BL_Erase_Inactive_APP(); // BL specify the Image to erase	
+	
+BL_VoidRec();		//BL Receive new Image		
+							
+}
 
-Function_TYPE addr_to_call = 0;
-
-void func(void)
+else      // APP flag is set	
 {
 
-// Define SCB_VTOR to define stack pionter address	
-#define SCB_VTOR   *((volatile u32*)0xE000ED08)
-  // Init stack pionter
-	SCB_VTOR = 0x08001000;
-
-  // Jumo to start of entry piont
-	addr_to_call = *(Function_TYPE*)(0x08001004);
- // jump to main function
-	addr_to_call();
-
-}
-
-	int main (void){
-		
-		
-		u8 Local_u8RecStatus;
+BR_CheckCorruptFlags();	// check if any file is currupted	
 	
-		
-	  MRCC_voidInitSysClock();
+BR_DefResetVect(); // Define reset vector of each app 
 	
-	  MRCC_voidEnableClock(RCC_APB2,RCC_IOPA_PERIPHERAL);
-
-		MRCC_voidEnableClock(RCC_APB2,RCC_USART1_PERIPHERAL);
- 
-	 	MRCC_voidEnableClock(RCC_AHB,RCC_FLITF_PERIPHERAL);
-		
-    	
-	  MUART_voidInit();
+BR_Check_App_Exist  (); //check app
 	
-    MSTK_voidInit();
-
-	  MSTK_voidSetIntervalSingle(15000000,func);		
-		 
-
-while(u8TimeOutFlag == 0)
-	{
-
-		Local_u8RecStatus = MUART_u8ReceiveSynch(&(u8RecBuffer[u8RecCounter]) );
-		
-		if (Local_u8RecStatus == 1)
-		{
-			MSTK_voidStopInterval();
-
-			if(u8RecBuffer[u8RecCounter] == '\n')
-			{
-				if (u8BLWriteReq == 1)  //erase all app pages before flashing
-				{
-					MFPEC_voidEraseAppArea();
+BR_Check_Backup_Exist(); // check backup
+	
 					
-					u8BLWriteReq = 0;
-				}
-				
-				/* Parse */
-				
-				Parser_voidParseRecord(u8RecBuffer); // flash buffer has received
-				
-				MUART_voidTransmitSynch("ok");  // send ok to transmitter to sent the next record
-				
-				u8RecCounter = 0;//Begin the buffer to base offset
-			}
-
-			else
-			{
-				u8RecCounter ++ ;
-			}
-
-	  MSTK_voidSetIntervalSingle(15000000,func);		
-		}
-
-		else
-		{
-
-		}
-	}
 }
+			
+while(1)
+{
+	
+  /*No thing to do*/
+
+}
+}
+

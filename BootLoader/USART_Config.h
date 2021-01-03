@@ -9,19 +9,19 @@
 
 /***********************************************************************************************************************************************************************************************************************************************************/
                                               /*BRR REGISTER CONFIGURATION*/
-																							
+
 																			 /*  THIS CALCULATION ARE MADE FOR 8MHZ
-																			 
-																			 BRR Register Value :"SPEED_9600,SPEED_4800,SPEED_9600" 
+
+																			 BRR Register Value :"SPEED_9600,SPEED_4800,SPEED_9600"
 																			                                                          */
-#define   BUAD_RATE               SPEED_4800              																																			
-																							
-												
+#define   BUAD_RATE               SPEED_9600
+
+
 /***********************************************************************************************************************************************************************************************************************************************************/
                                               /*CR1 REGISTER CONFIGURATION*/
 
-#define    USART1_ENABLE                     ENABLE                               /*ENABLE USART*/
-                                                                  /*Choose parity mode "ENABLE OR DISABLE"*/       
+#define    USART1_ENABLE                    ENABLE                               /*ENABLE USART*/
+                                                                  /*Choose parity mode "ENABLE OR DISABLE"*/
 #define    PARITY_CONTROL_BIT               DISABLE
 
 #define    PARITY_SELECTION                 ODD                      /*Choose parity selection "odd or even"*/
@@ -32,7 +32,7 @@
 
 #define    TRANS_INTERRUPT_ENABLE           DISABLE                   /*TRANSMISSION COMPLETE INTERRRUPT*/
 
-#define    RECEIVE_INTERRUPT_ENABLE         DISABLE                    /*TRECEIVE COMPLETE INTERRRUPT*/
+#define    RECEIVE_INTERRUPT_ENABLE         ENABLE                    /*TRECEIVE COMPLETE INTERRRUPT*/
 
 /***********************************************************************************************************************************************************************************************************************************************************/
                                               /*CR2 REGISTER CONFIGURATION*/
@@ -40,14 +40,14 @@
 
 #define       STOP_BIT_NUMBER                ONE                   /*STOP BIT NUMBER ---> "ONE  OR TWO"*/
 
-#define       CLOCK_ENABLE                 ENABLE                           /*CLOCK ENABLE */
+#define       CLOCK_ENABLE                  DISABLE                       /*CLOCK ENABLE */
 
-#define       CLOCK_POLARITY                LOW            /*CLOCK POLARITY : LOW:IDL EDGE IS FALLING IT WORK AT RAISING EDGE
-                                                                             HIGH: THE TRANSMIT BEGIN AT RAISING EDGE        
-																																								                                          */    
+#define       CLOCK_POLARITY                HIGH            /*CLOCK POLARITY : LOW:IDL EDGE IS FALLING IT WORK AT RAISING EDGE
+                                                                               HIGH: THE TRANSMIT BEGIN AT RAISING EDGE
+																																								                                          */
 #define       CLOCK_PHASE                   HIGH					 /*CLOCK PHASE :LOW:The first clock transition is the first data capture edge
-                                                                          HIGH: the second clock transition is the first data capture edge.        
-																																								                                          */																																																					
+                                                                          HIGH: the second clock transition is the first data capture edge.
+																																								                                          */
 /***********************************************************************************************************************************************************************************************************************************************************/
                                               /*CR3 REGISTER CONFIGURATION*/
 

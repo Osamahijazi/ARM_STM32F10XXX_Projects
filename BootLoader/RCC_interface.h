@@ -27,7 +27,7 @@
 #define RCC_DMA2       1
 #define RCC_SRAM       2
 #define RCC_FLITF      4
-#define RCC_CRCE       6
+#define RCC_CRC        6
 #define RCC_FSMC       8
 #define RCC_SDIO       10
 
