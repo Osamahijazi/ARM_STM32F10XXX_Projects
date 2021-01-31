@@ -9,7 +9,6 @@
 #include "FEE2_Interface.h"
 #include "FEE2_Private.h"
 #include "FEE2_Config.h"
-#include "FPEC_Interface.h"
 /****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
 // u16 WORD_NUMBERS = (u16)(((u32)(Last_Address-First_Address)) / 4) ; //number of words in determined region
 
@@ -32,7 +31,7 @@ void FEEP_voidUpdateFlag(u32 Copy_u32Address, u32 Copy_u32NewData) // change the
 	for ( AddressCounter = First_Address ; AddressCounter <= Last_Address ;)
 	{
 
-		if( (AddressCounter != Copy_u32Address) & ( *((u32*)(AddressCounter))  != 0Xffffffff ) )	//check to save current flags
+		if( (AddressCounter != Copy_u32Address) & ( *((u32*)(AddressCounter))  != ERASED_WORD ) )	//check to save current flags
 		{
 			ADD[StoreCounter] = AddressCounter ; // save addresses
 			VAL[StoreCounter] = *((u32*)(AddressCounter)); //save values
@@ -41,7 +40,7 @@ void FEEP_voidUpdateFlag(u32 Copy_u32Address, u32 Copy_u32NewData) // change the
 		AddressCounter = AddressCounter + WORD ; // incerement address
 	}
 
-	FPEC_voidFlashPageErase(63); // erase after save
+	FPEC_voidFlashPageErase(LAST_PAGE); // erase after save
 
 	for (resaveCounter=0 ; resaveCounter < StoreCounter ;resaveCounter++ ) //restore flags
 	{

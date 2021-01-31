@@ -7,41 +7,40 @@
 #include "FEE2_Interface.h"
 #include "STK_interface.h"
 #include "Branch_Interface.h"
-
+u32 osama ;
 int main(void)
-{
+{	
 	
 BR_VoidIinit(); //Init branch 
-
-if( MODE == BL_MODE  ) 
+	
+//FEEP_voidUpdateFlag(SYS_MODE_ADD , 0X01); // bl mode to resent the image
+	
+osama = BR_CheckAPPCrc();
+	
+osama =	BR_CheckBackupCrc();
+	
+	
+	
+if( CURRENT_MODE == BL_MODE  ) 
 {
 	                                                   //Flag is BL MODE
-BL_VoidInit(); //Init BL
+BR_VoidJumpToBL();
 	
-BL_VoidACK(); //BL Talk to Node
-
-BL_Erase_Inactive_APP(); // BL specify the Image to erase	
-	
-BL_VoidRec();		//BL Receive new Image		
-							
 }
 
 else      // APP flag is set	
 {
+	
+//	FEEP_voidUpdateFlag(SYS_MODE_ADD , 0X00); // bl mode to resent the image
 
-BR_CheckCorruptFlags();	// check if any file is currupted	
-	
-BR_DefResetVect(); // Define reset vector of each app 
-	
-BR_Check_App_Exist  (); //check app
-	
-BR_Check_Backup_Exist(); // check backup
-	
+			
+ BR_VoidJumpToApp(); //check app
 					
 }
 			
 while(1)
 {
+	
 	
   /*No thing to do*/
 

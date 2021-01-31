@@ -12,11 +12,15 @@
 #include "STD_TYPES.h"
 
 #define APP1_FIRST_ADDRESS            0x08002000
-#define BACKUP_FIRST_ADDRESS          0x08009800
+#define BACKUP_FIRST_ADDRESS          0x08009000
 #define DATA_STEP                     0X10
 #define CRC_Init                      0x01
 #define SIZE_Init                     0x00
 #define ERASED_WORD                   0Xffffffff
+#define ZERO_HEXA                     48
+#define NINE_HEXA                     57
+#define HEX_ASCII_DIFF                55
+
 
 /***********************************************************************************/
                       /***FUNCTIONS PROTOTYPES***/
@@ -39,7 +43,7 @@
 *Return     : Hexa Bytes
 
 ****************************************************************************************/
-uint8 AsciToHex(uint8 Copy_u8Asci);
+static uint8 AsciToHex(uint8 Copy_u8Asci);
 /************************************************************************************
 
 *Name       :   ParseData
@@ -57,25 +61,7 @@ uint8 AsciToHex(uint8 Copy_u8Asci);
 *Return     : void
 
 ****************************************************************************************/
-void ParseData(uint8* Copy_u8BufData);
-/************************************************************************************
-
-*Name       :   Parser_voidParseRecord
-
-*Description: * Function to detect the knd of comming record 
-							
-*Pre-Cond   :	input Data in ascii				
-							
-*pos-Cond   : None
-
-*Input      : record array
-
-*Output     : void
-
-*Return     : function to set Data in flash or end receive
-
-****************************************************************************************/
-void Parser_voidParseRecord(uint8* Copy_u8BufData);
+static void ParseData(uint8* Copy_u8BufData);
 /************************************************************************************
 
 *Name       :   BL_VoidInit
@@ -96,7 +82,7 @@ void Parser_voidParseRecord(uint8* Copy_u8BufData);
 void BL_VoidInit(void);
 /************************************************************************************
 
-*Name       :   BL_VoidACK
+*Name       :   BL_VoidGetSizeAndCrc
 
 *Description: * Function to ack Node to enter program seesion 
 							
@@ -111,10 +97,10 @@ void BL_VoidInit(void);
 *Return     : void
 
 ****************************************************************************************/
-void BL_VoidACK (void);
+void BL_VoidGetSizeAndCrc (void);
 /************************************************************************************
 
-*Name       :   BL_VoidRec
+*Name       :   BL_VoidRecImage
 
 *Description: * Function to receive hexa file from Node 
 							
@@ -128,7 +114,7 @@ void BL_VoidACK (void);
 
 *Return     : void
 ****************************************************************************************/
-void BL_VoidRec(void);
+void BL_VoidRecImage(void);
 /************************************************************************************
 
 *Name       :   BL_Send_Error
@@ -145,7 +131,7 @@ void BL_VoidRec(void);
 
 *Return     : void
 ****************************************************************************************/
-void BL_Send_Error(void);
+void BL_VoidSendError(void);
 /************************************************************************************
 
 *Name       :   BL_Erase_Inactive_APP
@@ -162,9 +148,22 @@ void BL_Send_Error(void);
 
 *Return     : void
 ****************************************************************************************/
-void BL_Erase_Inactive_APP(void);	
+void BL_VoidInitFlags(void ); // BL specify the Image to erase	
 
 void BL_voidEndRecieve(void);
+
+static void BL_VoidGetNodeAck(void);
+
+void BL_VoidBeginSession(void);
+
+void BL_VoidDetectWrongAck(void);  //report an error to node to begin a new session
+
+void BL_VoidDetectPoweroff(void);  //report an error to node to begin a new session
+
+void BL_VoidDetectCorruptedImages(void);  //report an error to node to begin a new session
+
+
+
 
 
 

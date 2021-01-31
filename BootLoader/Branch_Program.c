@@ -14,85 +14,165 @@
 #include "BL_Interface.h"
 #include "RCC_interface.h"
 #include "GPIO_interface2.h"
-typedef void (*Function_t)(void);
-Function_t addr_to_call = 0;
-/***********************************************************************************************************************************************************************************************************************************************************/
-void BR_DefResetVect(void)
-{	
-	 if(STATUS_ON ==STATUS1)	 
-	 {
-	 
-	SCB_VTOR = 0x08002000; // goto app1
-	addr_to_call = *(Function_t*)(0x08002004);
-	 	 
-	 }
-
-   if(STATUS_ON ==STATUS2)	 
-	 {
-	 
-		 SCB_VTOR = 0x08009800; // goto backup
-	   addr_to_call = *(Function_t*)(0x08009804); 
-	 
-	 }
-}
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-void BR_Start_APP(void){
-	
-	addr_to_call();
-	      
-}
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-void BR_Start_Backup(void){
-	
-		 addr_to_call();
-
-}
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+/***********************************************************************************************************************************************************************************************************************************************************/ 
 void BR_VoidIinit()
 {
     RCC_InitysClock();
 		RCC_VoidEnableClock(RCC_AHB_EN,RCC_CRC); /* CRC Unit */
 		RCC_VoidEnableClock(RCC_APB2_EN,RCC_USART1); /* USART1 */
-	  GPIO_VoidSetPinDirection(GPIOA,PIN9,0b1010);   /* TX AFPP */
-		GPIO_VoidSetPinDirection(GPIOA,PIN10,0b0100);  /* RC Input Floating */
-		
+	  GPIO_VoidSetPinDirection(GPIOA,PIN9,OUTPUT_2MHZ_AFPP);   /* TX AFPP */
+		GPIO_VoidSetPinDirection(GPIOA,PIN10,INPUT_FLOATING);  /* RC Input Floating */	
+		USART1_VoidInit();  //Init usart1
+
 	  
-if(MODE == ERASED_WORD  )  // first time to install firmware
+if(CURRENT_MODE == ERASED_WORD  )   // check if mode flag is erased
 {
+	/*
+	if you are get here that means:
 	
-	  FEEP_voidAddFlag(MODE_ADD , BL_MODE); // BL mode
+	1-its first time to install any images
+	2-the two images are corrupted 	
+	*/
+	
+  BL_VoidBeginSession(); // wait here untill session is begin by node
+	
+	FEEP_voidAddFlag(SYS_MODE_ADD , BL_MODE); // BL mode
+	
+	  // we shoould wait here to begin session
 
 }	
 
 }
 /****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-void BR_Check_Backup_Exist(void)
+void BR_VoidJumpToBL(void)
+{
+	
+	
+BL_VoidInit(); //Init BL
+
+BL_VoidGetSizeAndCrc(); //BL Talk to Node
+
+BL_VoidInitFlags(); // BL specify the Image to erase
+
+BL_VoidRecImage();		//BL Receive new Image		
+	
+
+}
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+void BR_VoidJumpToApp(void)
+{
+	
+	if( ARE_IMAGES_IDENTICAL == IDENTICAL_ON ) // if the two images are the same
+	{
+	
+   u32 Local_u32CRC ;
+
+	if(*(( u32*)(APP_FIRST_WORD)) != ERASED_WORD)  // check for reset vector
+	{
+
+     if(APP_STATUS ==STATUS_ON)	       //check status
+	{	
+		
+		Local_u32CRC =	CRC_CalculateCRC_HW_Rom(APP_FIRST_WORD, APP_WORDS);//get crc value of app1
+	
+         if(Local_u32CRC == CURRENT_APP_CRC) //CRC CHECK
+	{		
+		
+        BR_VoidStartAPP(); //goto APP 
+	
+}	
+	
+
+else //this image1 is corrupted
+ {
+ 
+	 
+	   FEEP_voidUpdateFlag(CORRUPT_ADD_APP , CORRUPTED_ON ); // corrupted on
+     FEEP_voidUpdateFlag(STATUS_ADD_APP , STATUS_OFF); // app1 off	
+	   FEEP_voidUpdateFlag(STATUS_ADD_ROLLBACK , STATUS_ON); // app1 off	
+	   BR_VoidJumpToRollback(); // go to rollback
+
+	 
+ }
+					
+}
+	
+	 /* one check or more are false*/
+
+}
+	}
+	
+	else // if the two images are different 
+	{
+	
+	 u32 Local_u32CRC ;
+		
+		Local_u32CRC =	CRC_CalculateCRC_HW_Rom(APP_FIRST_WORD, APP_WORDS);//get crc value of app1
+	
+         if(Local_u32CRC == CURRENT_APP_CRC) //CRC CHECK
+      	{		
+		
+          BR_VoidFlashRollBack(); //copy image 1 to rollback
+					FEEP_voidUpdateFlag(CRC_ADD_ROLLBACK     ,  CURRENT_APP_CRC); //save crc of image1 to rolback
+          FEEP_voidUpdateFlag(SIZE_ADD_ROLLBACK    ,  APP_WORDS); // save size of image1 to rolback		
+					FEEP_voidUpdateFlag(IDENTICAL_ADD        ,  IDENTICAL_ON ); // now two images are identical
+				 	BR_VoidSoftResetReq(); // software reset and return to BR
+						
+       }	
+		
+	      else
+      {  // if image1 is corrupted
+
+				if( *(( u32*)(ROLLBACK_FIRST_WORD)) != ERASED_WORD )  //check if rollback is exist or not
+				{	
+				BR_VoidFlashApp(); //copy image 1 to rollback
+				FEEP_voidUpdateFlag(CRC_ADD_APP     ,  CURRENT_ROLLBACK_CRC); //save crc of rollback to image1
+        FEEP_voidUpdateFlag(SIZE_ADD_APP    ,  ROLLBACK_WORDS); // save size of rollback to image 1		
+			  FEEP_voidUpdateFlag(IDENTICAL_ADD    ,  IDENTICAL_ON ); // now two images are identical
+			  BR_VoidSoftResetReq(); // software reset and return to BR
+					
+				}
+				else		
+				{     
+				
+				BL_VoidDetectCorruptedImages() ; //if image1 is corrupted and rollback doesnt exist send error and back to BR
+				
+				}
+				
+      }
+	
+	
+	}
+	
+}
+//****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+void BR_VoidJumpToRollback(void)
 {
 	
 	  u32 Local_u32CRC ;
 		
-	if( SCB_VTOR != ERASED_WORD)  // check for reset vector this condition isalways right
+	if( *(( u32*)(ROLLBACK_FIRST_WORD)) != ERASED_WORD)  // check if app is exist
 	{
 
-     if(STATUS2 == STATUS_ON)	//check status
+     if(ROLLBACK_STATUS == STATUS_ON)	//check status
 	{	
 			
-      Local_u32CRC =	CRC_CalculateCRC_HW_Rom(BACKUP_FIRST_ADDRESS, BACKUP_WORDS);//get crc value of app1
+    Local_u32CRC =	CRC_CalculateCRC_HW_Rom(ROLLBACK_FIRST_WORD, ROLLBACK_WORDS);//get crc value of app1
 	
-         if(Local_u32CRC == CRC2) //CRC CHECK
+         if(Local_u32CRC == CURRENT_ROLLBACK_CRC) //CRC CHECK
 	{		
 		
-        BR_Start_Backup();//goto backup
-	
+        BR_VoidStartBackup();//goto backup
+
  }	
 	
  else //this image is corrupted
  {	 
 	 
-	  FEEP_voidUpdateFlag( CORRUPT_ADD_APP2 , CORRUPTED_ON); //corrupted flag on
-	  FEEP_voidUpdateFlag(STATUS_ADD_APP1 , STATUS_ON); // app1 off	
-	  FEEP_voidUpdateFlag(STATUS_ADD_APP2 , STATUS_OFF); // app1 off	
-    Soft_Reset_Req();
+	  FEEP_voidUpdateFlag( CORRUPT_ADD_ROLLBACK , CORRUPTED_ON); //corrupted flag on
+	  FEEP_voidUpdateFlag(STATUS_ADD_APP , STATUS_ON); // app1 off	
+	  FEEP_voidUpdateFlag(STATUS_ADD_ROLLBACK , STATUS_OFF); // app1 off	
+    BR_VoidCheckCorruptFlags();	// check if both files is currupted	
 			 
  
  }
@@ -104,71 +184,55 @@ void BR_Check_Backup_Exist(void)
 }
 	
 }
-
 /****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-void BR_Check_App_Exist(void)
-{
+void BR_VoidStartAPP(void){	
+	 
+	 typedef void (*Function_t)(void);
+   Function_t addr_to_call = 0 ;
+	 SCB_VTOR = APP_FIRST_WORD; // goto app1
+	 addr_to_call = *(Function_t*)(APP_ENTRY_WORD);
+	 addr_to_call();
+	      
+}
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+void BR_VoidStartBackup(void){
 	
-   u32 Local_u32CRC ;
+	   typedef void (*Function_t)(void);
+     Function_t addr_to_call = 0 ;
+	   SCB_VTOR = ROLLBACK_FIRST_WORD; // goto rollback
+	   addr_to_call = *(Function_t*)(ROLLBACK_ENTRY_WORD); 
+		 addr_to_call();
 
-	if( SCB_VTOR != ERASED_WORD)  // check for reset vector
-	{
+}
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																
+void BR_VoidSoftResetReq(void)
+{
 
-     if(STATUS1 ==STATUS_ON)	       //check status
+	SCB_AIRCR =SOFT_RESET ; // key to reset
+
+}
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+
+void BR_VoidCheckCorruptFlags(void)
+{
+
+	if((APP_IS_CORRUPTED == CORRUPTED_ON ) & (ROLLBACK_IS_CORRUPTED == CORRUPTED_ON ) ) // if all checks are false
 	{	
 		
-		Local_u32CRC =	CRC_CalculateCRC_HW_Rom(APP1_FIRST_ADDRESS, APP_WORDS);//get crc value of app1
-	
-         if(Local_u32CRC == CRC1) //CRC CHECK
-	{		
-		
-        BR_Start_APP(); //goto APP 
-	
-}	
-	
-
-else //this image is corrupted
- {
- 
-	 
-	   FEEP_voidUpdateFlag(CORRUPT_ADD_APP1 , CORRUPTED_ON ); // corrupted on
-     FEEP_voidUpdateFlag(STATUS_ADD_APP1 , STATUS_OFF); // app1 off	
-	   FEEP_voidUpdateFlag(STATUS_ADD_APP2 , STATUS_ON); // app1 off	
-	 
- }
-					
-}
-	
-	 /* one check or more are false*/
+    FEEP_voidFreeFlag(SYS_MODE_ADD); // free flag to begin new session
+   		
+    BL_VoidDetectCorruptedImages() ; //  report error and reset back to branch 	
+				
+	}
 
 }
-	
-}
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 	
 
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-void BR_Change_Status(u32 Copy_u32Address )
-{
-
-if( STATUS_OFF == *(( u32*)(Copy_u32Address)))
-{
-	
-FEEP_voidUpdateFlag(Copy_u32Address , STATUS_ON); // status on	
-
-}
-else
-{
-FEEP_voidUpdateFlag(Copy_u32Address , STATUS_OFF); // status off	
-
-}
-
-}
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-/*
 u32 BR_CheckAPPCrc(void)
 {
 u32 Local_u32CRC ;
 	
-      Local_u32CRC =	CRC_CalculateCRC_HW_Rom(0x08002000, 382);//get crc value of app1
+      Local_u32CRC =	CRC_CalculateCRC_HW_Rom(0X08002000, 0x00000240);//get crc value of app1
 
 return  Local_u32CRC ;	
 
@@ -177,37 +241,59 @@ u32 BR_CheckBackupCrc(void)
 {
 u32 Local_u32CRC ;
 	
-	  	Local_u32CRC =	CRC_CalculateCRC_HW_Rom(0x08009800, 382);//get crc value of app1
+	  	Local_u32CRC =	CRC_CalculateCRC_HW_Rom(0x08009000, 0x00000240);//get crc value of app1
 
-return  Local_u32CRC ;	
+return  Local_u32CRC ;		
+
+}
+
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+void BR_VoidFlashRollBack(void)  // flash image1 to rollback region
+{
 	
+FPEC_voidEraseBackup_Area (); // erase rollback region
+	
+u32 Local_u32Data , Local_u32WordCounter ;
+	
+u32 DIFF_u32WORDS = ROLLBACK_FIRST_WORD -	APP_FIRST_WORD ; // get the difference between first two words in images
+	
+u32 Local_u32APPLastWord = (APP_FIRST_WORD + ( WORD_BYTES * ( APP_WORDS )) ) ; //last word in image 1 
 
-}
-
-*/
-
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-void Soft_Reset_Req(void)
-{
-
-	SCB_AIRCR =SOFT_RESET ; // key to reset
-
-}
-/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-
-void BR_CheckCorruptFlags(void)
-{
-
-	if((APP1_IS_CORRUPTED == CORRUPTED_ON ) & (APP2_IS_CORRUPTED == CORRUPTED_ON ) )
-	{
-	                         //erase all apps region and return to init case
-		
- 	FPEC_voidEraseBackup_Area ();  // erase app1   region
-  FPEC_voidEraseApp_one_Area(); //  erase backup region
- 	
-   BL_Send_Error() ; // if all checks are false report error and reset back to branch to enter BL		
+	 for( Local_u32WordCounter = APP_FIRST_WORD ; Local_u32WordCounter < Local_u32APPLastWord ; )
+	
+      {
+			
+				Local_u32Data = *((u32*)(Local_u32WordCounter)); //save values
 				
-	}
+				FPEC_voidFlashWrite( (Local_u32WordCounter + DIFF_u32WORDS) ,  & (Local_u32Data)  , LENGHT ); //save new input Data
+			
+	  		Local_u32WordCounter = Local_u32WordCounter + WORD_BYTES ; // incerement address
 
+			}	
 
 }
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	
+void BR_VoidFlashApp(void)  // flash image1 to rollback region
+{
+	
+FPEC_voidEraseApp_one_Area (); // erase image1 region
+	
+u32 Local_u32Data , Local_u32WordCounter ;
+	
+u32 DIFF_u32WORDS = ROLLBACK_FIRST_WORD -	APP_FIRST_WORD ; // get the difference between first two words in images
+	
+u32 Local_u32RollbackLastWord = (ROLLBACK_FIRST_WORD + ( WORD_BYTES * ( ROLLBACK_WORDS )) ) ; //last word of rollback
+
+	 for( Local_u32WordCounter = ROLLBACK_FIRST_WORD ; Local_u32WordCounter < Local_u32RollbackLastWord ; )
+	
+      {
+			
+				Local_u32Data = *((u32*)(Local_u32WordCounter)); //save values
+				
+				FPEC_voidFlashWrite( (Local_u32WordCounter - DIFF_u32WORDS) ,  & (Local_u32Data)  , LENGHT ); //copy data to image 1
+			
+	  		Local_u32WordCounter = Local_u32WordCounter + WORD_BYTES ; // incerement address
+
+			}
+}
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/																                                  																 																	

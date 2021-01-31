@@ -7,19 +7,23 @@
 #ifndef BRANCH_INTERFACE_H
 #define BRANCH_INTERFACE_H
 /*************************************************************APPS MACROS**************************************************************************************************************************************************************************************************************************/																                                  																 																	
-#define APP1_FIRST_ADDRESS          0x08002000
-#define APP_CRC                     0xD97C1DCA   
-#define APP_WORDS_NUMBER              573
-#define BACKUP_FIRST_ADDRESS        0x08009800
-#define BACKUP_CRC                  0x6EE3481A
-#define BACKUP_WORDS_NUMBER            382
-#define BACKUP_WORDS_NUMBER_INTERR     594
-#define BACKUP_CRC_INERRUPT          0x04F7EDE6
+#define APP_FIRST_WORD               0x08002000
+#define APP_ENTRY_WORD               0x08002004
+#define APP1_CRC                     0xD97C1DCA   
+#define APP1_WORDS_NUMBER            0x0000023D
 
+#define ROLLBACK_FIRST_WORD          0x08009000
+#define ROLLBACK_ENTRY_WORD          0x08009004
+#define APP2_CRC                     0xE8BE9962
+#define APP2_WORDS_NUMBER            0x000002A4 
 
+#define APP3_CRC_BLOCK               0xDC3D0367
+#define APP3_WORDS_NUMBER            0x00000240 
+
+#define WORD_BYTES                   4
+#define LENGHT                       2
 /***********************************************************************************/
-                      /***FUNCTIONS PROTOTYPES***/
-/***********************************************************************************/						
+                      /***FUNCTIONS PROTOTYPES***/						
 /************************************************************************************
 
 *Name       :   BR_VoidIinit
@@ -40,7 +44,7 @@
 void BR_VoidIinit();
 /************************************************************************************
 
-*Name       :   BR_Check_Backup_Exist
+*Name       :   BR_VoidJumpToRollback
 
 *Description: * Function to perform all checks before jump to backup 
 							
@@ -55,10 +59,10 @@ void BR_VoidIinit();
 *Return     : void
 
 ****************************************************************************************/
-void BR_Check_Backup_Exist(void);
+void BR_VoidJumpToRollback(void);
 /************************************************************************************
 
-*Name       :   BR_Check_App_Exist
+*Name       :   BR_VoidJumpToApp
 
 *Description: * Function to perform all checks before jump to app 
 							
@@ -73,70 +77,16 @@ void BR_Check_Backup_Exist(void);
 *Return     : void
 
 ****************************************************************************************/
-void BR_Check_App_Exist(void);
+void BR_VoidJumpToApp(void);
 /************************************************************************************
 
-*Name       :   BR_Change_Status
-
-*Description: * Function to ahange the status of the input app address flag 
-							
-*Pre-Cond   :	None				
-							
-*pos-Cond   : None
-
-*Input      : status flag address
-
-*Output     : void
-
-*Return     : void
-
-****************************************************************************************/
-void BR_Change_Status(u32 Copy_u32Address );
-/************************************************************************************
-
-*Name       :   BR_CheckBackupCrc
-
-*Description: * Function to get crc of new image of backup 
-							
-*Pre-Cond   :	new image crc has received				
-							
-*pos-Cond   : crc checked is performed
-
-*Input      : void
-
-*Output     : crc of new image
-
-*Return     : crc of new image
-
-****************************************************************************************/
-u32 BR_CheckBackupCrc(void);
-/************************************************************************************
-
-*Name       :   BR_CheckAPPCrc
-
-*Description: * Function to get crc of new image of app 
-							
-*Pre-Cond   :	new image crc has received				
-							
-*pos-Cond   : crc checked is performed
-
-*Input      : void
-
-*Output     : crc of new image
-
-*Return     : crc of new image
-
-****************************************************************************************/
-u32 BR_CheckAPPCrc(void) ;
-/************************************************************************************
-
-*Name       :   Soft_Reset_Req
+*Name       :   BR_VoidSoftResetReq
 
 *Description: * Function to perform soft reset 
 							
-*Pre-Cond   :	Error - Program seesion is Finished			
+*Pre-Cond   :	Error or Program seesion is Finished			
 							
-*pos-Cond   : crc checked is performed
+*pos-Cond   : none
 
 *Input      : void
 
@@ -145,7 +95,7 @@ u32 BR_CheckAPPCrc(void) ;
 *Return     : void
 
 ****************************************************************************************/
-void Soft_Reset_Req(void);  // Request immediate software reset
+void BR_VoidSoftResetReq(void);  // Request immediate software reset
 /************************************************************************************
 
 *Name       :   BR_Start_APP
@@ -163,7 +113,7 @@ void Soft_Reset_Req(void);  // Request immediate software reset
 *Return     : void
 
 ****************************************************************************************/
-void BR_Start_APP(void);
+void BR_VoidStartAPP(void);
 /************************************************************************************
 
 *Name       :   BR_Start_Backup
@@ -181,19 +131,79 @@ void BR_Start_APP(void);
 *Return     : void
 
 ****************************************************************************************/
-void BR_Start_Backup(void);
+void BR_VoidStartBackup(void);
+/************************************************************************************
 
+*Name       :   BR_VoidCheckCorruptFlags
 
-void BR_DefResetVect(void);
+*Description: * Function to check if the both images arre corrupted  
+							
+*Pre-Cond   :	None				
+							
+*pos-Cond   : None
 
-void BR_CheckCorruptFlags(void);
+*Input      : void
 
-void BR_SwitchApp(void);
+*Output     : Soft reset
 
+*Return     : void
 
+****************************************************************************************/
+void BR_VoidCheckCorruptFlags(void);
+/************************************************************************************
 
+*Name       :   BR_VoidJumpToBL
 
+*Description: * Function To begin BL session   
+							
+*Pre-Cond   :	mode flag is reset 				
+							
+*pos-Cond   : None
 
+*Input      : void
+
+*Output     : void
+
+*Return     : void
+
+****************************************************************************************/
+void BR_VoidJumpToBL(void);
+/************************************************************************************
+
+*Name       :   BR_VoidFlashRollBack
+
+*Description: * Function To copy image1 into image2   
+							
+*Pre-Cond   :	image 1 crc check is correct 				
+							
+*pos-Cond   : None
+
+*Input      : void
+
+*Output     : void
+
+*Return     : void
+
+****************************************************************************************/
+void BR_VoidFlashRollBack(void) ;
+/************************************************************************************
+
+*Name       :   BR_VoidFlashApp
+
+*Description: * Function To copy image2 into image1   
+							
+*Pre-Cond   :	image 1 is corrupted 				
+							
+*pos-Cond   : None
+
+*Input      : void
+
+*Output     : void
+
+*Return     : void
+
+****************************************************************************************/
+void BR_VoidFlashApp(void);  // flash image1 to rollback region
 
 
 

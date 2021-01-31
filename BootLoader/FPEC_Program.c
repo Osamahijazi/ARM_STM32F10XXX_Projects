@@ -17,7 +17,7 @@ void FPEC_voidEraseApp_one_Area(void)
 {
 	u8 i;
 
-	for (i=8;i<38;i++)
+	for (i=8;i<36;i++)
 	{
 		FPEC_voidFlashPageErase(i);
 	}
@@ -28,7 +28,7 @@ void FPEC_voidEraseBackup_Area(void)
 {
 	u8 i;
 
-	for (i=38;i<63;i++)
+	for (i=36;i<63;i++)
 	{
 		FPEC_voidFlashPageErase(i);
 	}

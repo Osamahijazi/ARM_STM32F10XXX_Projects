@@ -13,30 +13,35 @@
 
                                                       /*flags addresses and  Definitions*/
 																										
-#define  MODE_ADD             0x0800FC00  // address of mode flag
+#define  SYS_MODE_ADD            0x0800FC00  // address of mode flag
 
-#define  CRC_ADD_APP1         0x0800FC04  // address of crc of first  app
-#define  STATUS_ADD_APP1      0x0800FC08  // address of status of first  app
-#define  SIZE_ADD_APP1        0x0800FC0C  // address of WORD NUMBER of first  app
-#define  CORRUPT_ADD_APP1     0x0800FC24  // address of Corrupt flag of first  app
+#define  CRC_ADD_APP             0x0800FC04  // address of crc of first  app
+#define  STATUS_ADD_APP          0x0800FC08  // address of status of first  app
+#define  SIZE_ADD_APP            0x0800FC0C  // address of WORD NUMBER of first  app
+#define  CORRUPT_ADD_APP         0x0800FC24  // address of Corrupt flag of first  app
 
 
-#define  CRC_ADD_APP2         0x0800FC14  // address of crc of second  app
-#define  STATUS_ADD_APP2      0x0800FC18  // address of status of second  app
-#define  SIZE_ADD_APP2        0x0800FC1C  // address of WORD NUMMBER of second  app
-#define  CORRUPT_ADD_APP2     0x0800FC20  // address of Corrupt flag of second  app
+#define  CRC_ADD_ROLLBACK         0x0800FC14  // address of crc of second  app
+#define  STATUS_ADD_ROLLBACK      0x0800FC18  // address of status of second  app
+#define  SIZE_ADD_ROLLBACK        0x0800FC1C  // address of WORD NUMMBER of second  app
+#define  CORRUPT_ADD_ROLLBACK     0x0800FC20  // address of Corrupt flag of second  app
+
+#define IDENTICAL_ADD             0X0800FC28  // address of identical images flag      
 
                                                  
 
-#define  MODE          *(( u32*)(MODE_ADD))     // variable to indicate the current mode (BL OR APP)
-#define  CRC1          *(( u32*)(CRC_ADD_APP1))  // variable to store crc address of first  app
-#define  CRC2          *(( u32*)(CRC_ADD_APP2))  // variable to store crc address of second app
-#define  STATUS1       *(( u32*)(STATUS_ADD_APP1))  // variable to store status address of first app
-#define  STATUS2       *(( u32*)(STATUS_ADD_APP2))  // variable to store status address of second app
-#define  APP_WORDS     *(( u32*)(SIZE_ADD_APP1))  // variable to store crc address of first  app
-#define  BACKUP_WORDS  *(( u32*)(SIZE_ADD_APP2))  // variable to store crc address of second app
-#define  APP1_IS_CORRUPTED  *(( u32*)(CORRUPT_ADD_APP1))  // variable to store crc address of second app
-#define  APP2_IS_CORRUPTED  *(( u32*)(CORRUPT_ADD_APP2))  // variable to store crc address of second app
+#define  CURRENT_MODE           *(( u32*)(SYS_MODE_ADD))     // variable to indicate the current mode (BL OR APP)
+#define  CURRENT_APP_CRC        *(( u32*)(CRC_ADD_APP))  // variable to store crc address of first  app
+#define  CURRENT_ROLLBACK_CRC   *(( u32*)(CRC_ADD_ROLLBACK))  // variable to store crc address of second app
+#define  APP_STATUS             *(( u32*)(STATUS_ADD_APP))  // variable to store status address of first app
+#define  ROLLBACK_STATUS        *(( u32*)(STATUS_ADD_ROLLBACK))  // variable to store status address of second app
+#define  APP_WORDS              *(( u32*)(SIZE_ADD_APP))  // variable to store crc address of first  app
+#define  ROLLBACK_WORDS         *(( u32*)(SIZE_ADD_ROLLBACK))  // variable to store crc address of second app
+#define  APP_IS_CORRUPTED       *(( u32*)(CORRUPT_ADD_APP))  // variable to store crc address of second app
+#define  ROLLBACK_IS_CORRUPTED  *(( u32*)(CORRUPT_ADD_ROLLBACK))  // variable to store crc address of second app
+
+#define ARE_IMAGES_IDENTICAL    *(( u32*)(IDENTICAL_ADD))  // var to check if the two images are the same   
+ 
 
 
                                                             /*general macros*/
@@ -46,7 +51,9 @@
 #define  STATUS_ON          0X01            //value of on mode																											 
 #define  STATUS_OFF         0X00            //value of off mode		
 #define  CORRUPTED_OFF      0X00            //value of off mode																											 
-#define  CORRUPTED_ON       0X01            //value of off mode																											 
+#define  CORRUPTED_ON       0X01            //value of off mode
+#define  IDENTICAL_OFF      0X00
+#define  IDENTICAL_ON       0X01
 
 /************************************************************************************
 
