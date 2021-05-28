@@ -1,0 +1,21 @@
+#ifndef RTE_TYPE_H
+#define RTE_TYPE_H
+
+#include "Std_Types.h"
+
+/*****************************************************************************************/
+/*                             Rte Local Data Types                                      */                              
+/*****************************************************************************************/                         
+typedef    uint8   Rte_SenderRecieverDistanceDataType  ; 
+typedef    uint8   Rte_SenderRecieverDataFlagType  ;
+typedef    uint8   Rte_PortStateType ;
+/*****************************************************************************************/
+/*                                Rte Local Macro Definition                             */
+/*****************************************************************************************/
+#define INIT_VALUE     0U
+#define RTE_E_OK	     0U
+#define RTE_E_NOK	     1U
+
+
+
+#endif

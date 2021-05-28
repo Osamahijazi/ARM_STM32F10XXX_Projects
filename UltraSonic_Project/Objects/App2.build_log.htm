@@ -1,0 +1,886 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: osama Windows, HP Inc., LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.31.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+D:\Keil.Workshop\UltraSonic_Project\App2.uvprojx
+Project File Date:  05/28/2021
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Rebuild target 'stm32f103'
+files/CAN_cfg.c(15): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/CAN_cfg.c(15): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/CAN_cfg.c(16): warning: In file included from...
+files/CAN_Interface.h(193): warning: '/*' within block comment [-Wcomment]
+/*Not used in this version*/
+^
+files/CAN_cfg.c(22): warning: no previous extern declaration for non-static variable 'CAN_InitStruct' [-Wmissing-variable-declarations]
+CAN_InitTypeDef        CAN_InitStruct         = { 1 , CAN_Mode_Normal   , 0 , 0X0C , 0X01, DISABLE , DISABLE , DISABLE , DISABLE , DISABLE , DISABLE } ;
+                       ^
+files/CAN_cfg.c(22): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+CAN_InitTypeDef        CAN_InitStruct         = { 1 , CAN_Mode_Normal   , 0 , 0X0C , 0X01, DISABLE , DISABLE , DISABLE , DISABLE , DISABLE , DISABLE } ;
+^
+files/CAN_cfg.c(25): warning: no previous extern declaration for non-static variable 'CAN_FilterInitStruct_1' [-Wmissing-variable-declarations]
+CAN_FilterInitTypeDef  CAN_FilterInitStruct_1 = { 0x00600000 , 0x00600000 , CAN_FilterMode_IdMask ,  1  , CAN_FilterScale_32bit , CAN_Filter_FIFO0 , ENABLE}; // ID = 0X03 
+                       ^
+files/CAN_cfg.c(25): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+CAN_FilterInitTypeDef  CAN_FilterInitStruct_1 = { 0x00600000 , 0x00600000 , CAN_FilterMode_IdMask ,  1  , CAN_FilterScale_32bit , CAN_Filter_FIFO0 , ENABLE}; // ID = 0X03 
+^
+files/CAN_cfg.c(16): warning: In file included from...
+files/CAN_Interface.h(28): warning: In file included from...
+files/CAN_cfg.h(65): warning: padding size of 'CAN_FilterInitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+files/CAN_cfg.c(27): warning: no previous extern declaration for non-static variable 'CAN_FilterInitStruct_2' [-Wmissing-variable-declarations]
+CAN_FilterInitTypeDef  CAN_FilterInitStruct_2 = { 0x00400000 , 0x00400000 , CAN_FilterMode_IdMask ,  2  , CAN_FilterScale_32bit , CAN_Filter_FIFO0 , ENABLE}; // ID = 0X02 
+                       ^
+files/CAN_cfg.c(27): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+CAN_FilterInitTypeDef  CAN_FilterInitStruct_2 = { 0x00400000 , 0x00400000 , CAN_FilterMode_IdMask ,  2  , CAN_FilterScale_32bit , CAN_Filter_FIFO0 , ENABLE}; // ID = 0X02 
+^
+7 warnings generated.
+compiling CAN_cfg.c...
+files/main.c(2): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/main.c(2): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/main.c(5): warning: In file included from...
+files/STK_Interface.h(83): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/main.c(6): warning: In file included from...
+files/Rte_DistanceSensor.h(11): warning: In file included from...
+files/Rte_Type.h(32): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/main.c(6): warning: In file included from...
+files/Rte_DistanceSensor.h(42): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/main.c(7): warning: In file included from...
+files/Rte_Buzzer.h(40): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/main.c(9): warning: no previous extern declaration for non-static variable 'Global_Distance' [-Wmissing-variable-declarations]
+ volatile uint8   Global_Distance  = 0 ;
+                  ^
+files/main.c(9): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+ volatile uint8   Global_Distance  = 0 ;
+          ^
+files/main.c(10): warning: no previous extern declaration for non-static variable 'status' [-Wmissing-variable-declarations]
+ uint8 status = 0 ;
+       ^
+files/main.c(10): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+ uint8 status = 0 ;
+ ^
+files/main.c(39): warning: '/*' within block comment [-Wcomment]
+                /*
+                ^
+9 warnings generated.
+compiling main.c...
+files/RCC.c(6): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/RCC.c(6): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/RCC.c(19): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT(RCC_CR , RCC_HSE_BYP);      /*DISABLE EXTERNAL CLOCK BY PASS*/ 
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(21): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                       CLR_BIT(RCC_CFGR , RCC_SW1 );
+                       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(76): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                  CLR_BIT(RCC_CFGR , RCC_MCO_2);    /*SET 1BITS ACCORDING TO CLOCK TYPE OTHER 2 IS NEGLIBALE*/
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(102): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CLR_BIT(RCC_CFGR,RCC_ADCPRE0);      /*SET 2BIT ACCORDING TO PRESCALE CHOICE*/
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(103): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CLR_BIT(RCC_CFGR,RCC_ADCPRE2);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(126): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                  CLR_BIT(RCC_CFGR,RCC_PPRE2_2);       /*SET 1BITS ACCORDING TO PRESCALE TYPE OTHER 2 IS NEGLIBALE*/
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(157): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                  CLR_BIT(RCC_CFGR , RCC_PPRE1_2);        /*SET 1BITS ACCORDING TO PRESCALE TYPE, OTHER 2 IS NEGLIBALE*/
+                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(189): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CLR_BIT(RCC_CFGR , RCC_HPRE3);          /*SET 1BITS ACCORDING TO PRESCALE TYPE, OTHER 3 IS NEGLIBALE*/
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(248): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT(RCC_CR,RCC_CSS_ON);
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/RCC.c(340): warning: no newline at end of file [-Wnewline-eof]
+/****************************************************************END OF FUNCTION**************************************************************************************************************************************************************************************************************************/                                     
+                                                                                                                                                                                                                                                                                                                                                ^
+12 warnings generated.
+compiling RCC.c...
+files/CanIf.c(19): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/CanIf.c(19): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/CanIf.c(21): warning: In file included from...
+files/CanIf_Interface.h(25): warning: In file included from...
+files/CAN_Interface.h(193): warning: '/*' within block comment [-Wcomment]
+/*Not used in this version*/
+^
+files/CanIf.c(21): warning: In file included from...
+files/CanIf_Interface.h(26): warning: In file included from...
+files/CanIf_Private.h(39): warning: 'BYTE_ONE' macro redefined [-Wmacro-redefined]
+#define BYTE_ONE                     0
+        ^
+files/CAN_Private.h(292): note: previous definition is here
+#define BYTE_ONE                1
+        ^
+files/CanIf.c(21): warning: In file included from...
+files/CanIf_Interface.h(26): warning: In file included from...
+files/CanIf_Private.h(40): warning: 'BYTE_TWO' macro redefined [-Wmacro-redefined]
+#define BYTE_TWO                     0
+        ^
+files/CAN_Private.h(293): note: previous definition is here
+#define BYTE_TWO                2
+        ^
+files/CanIf.c(21): warning: In file included from...
+files/CanIf_Interface.h(26): warning: In file included from...
+files/CanIf_Private.h(41): warning: 'BYTE_THREE' macro redefined [-Wmacro-redefined]
+#define BYTE_THREE                   0
+        ^
+files/CAN_Private.h(294): note: previous definition is here
+#define BYTE_THREE              3
+        ^
+files/CanIf.c(21): warning: In file included from...
+files/CanIf_Interface.h(25): warning: In file included from...
+files/CAN_Interface.h(162): warning: padding struct 'CanTxMsg' with 2 bytes to align 'ID' [-Wpadded]
+        uint32 ID;  // message identifier
+               ^
+files/CAN_Interface.h(156): warning: padding size of 'CanTxMsg' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+files/CanIf.c(88): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+                  CAN_VoidTransmit( CAN1 , &TxMessage );
+                                    ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN_Interface.h(289): note: passing argument to parameter 'CANx' here
+uint8 CAN_VoidTransmit(CAN_TypeDef* CANx, CanTxMsg*  TxMessage);
+                                    ^
+files/CanIf.c(169): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+Local_uint32Data = Can_uint32SynRecieveWord( CAN1 , CAN_FIFO0 );
+                                             ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN_Interface.h(408): note: passing argument to parameter 'CANx' here
+uint32 Can_uint32SynRecieveWord(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber  );
+                                             ^
+files/CanIf.c(200): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+Local_uint8Data = Can_uint8SynRecieveByte(  CAN1 , CAN_FIFO0  );
+                                            ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN_Interface.h(426): note: passing argument to parameter 'CANx' here
+uint8 Can_uint8SynRecieveByte(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber  );
+                                           ^
+files/CanIf.c(277): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+Local_ReturnError= CanIf_uint8Transmit_Struct( CAN1, TxMessage );
+                                               ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CanIf.c(123): note: passing argument to parameter 'CANx' here
+static Std_ReturnType CanIf_uint8Transmit_Struct( CAN_TypeDef* CANx, CanTxMsg TxMessage )
+                                                               ^
+files/CanIf.c(292): warning: incompatible pointer types initializing 'uint8 *' (aka 'unsigned char *') with an expression of type 'uint32 *' (aka 'unsigned long *') [-Wincompatible-pointer-types]
+        uint8 *Local_uint8DataPtr = &Copy_uint32Data ;  
+               ^                    ~~~~~~~~~~~~~~~~
+files/CanIf.c(334): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+Local_ReturnError= CanIf_uint8Transmit_Struct( CAN1, TxMessage );
+                                               ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CanIf.c(123): note: passing argument to parameter 'CANx' here
+static Std_ReturnType CanIf_uint8Transmit_Struct( CAN_TypeDef* CANx, CanTxMsg TxMessage )
+                                                               ^
+files/CanIf.c(98): warning: unused function 'CanIf_uint8Receive_Struct' [-Wunused-function]
+static Std_ReturnType CanIf_uint8Receive_Struct(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber, CanRxMsg RxMessage)
+                      ^
+15 warnings generated.
+compiling CanIf.c...
+files/CanIf_cfg.c(18): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/CanIf_cfg.c(18): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/CanIf_cfg.c(19): warning: In file included from...
+files/CanIf_Interface.h(25): warning: In file included from...
+files/CAN_Interface.h(193): warning: '/*' within block comment [-Wcomment]
+/*Not used in this version*/
+^
+files/CanIf_cfg.c(19): warning: In file included from...
+files/CanIf_Interface.h(26): warning: In file included from...
+files/CanIf_Private.h(39): warning: 'BYTE_ONE' macro redefined [-Wmacro-redefined]
+#define BYTE_ONE                     0
+        ^
+files/CAN_Private.h(292): note: previous definition is here
+#define BYTE_ONE                1
+        ^
+files/CanIf_cfg.c(19): warning: In file included from...
+files/CanIf_Interface.h(26): warning: In file included from...
+files/CanIf_Private.h(40): warning: 'BYTE_TWO' macro redefined [-Wmacro-redefined]
+#define BYTE_TWO                     0
+        ^
+files/CAN_Private.h(293): note: previous definition is here
+#define BYTE_TWO                2
+        ^
+files/CanIf_cfg.c(19): warning: In file included from...
+files/CanIf_Interface.h(26): warning: In file included from...
+files/CanIf_Private.h(41): warning: 'BYTE_THREE' macro redefined [-Wmacro-redefined]
+#define BYTE_THREE                   0
+        ^
+files/CAN_Private.h(294): note: previous definition is here
+#define BYTE_THREE              3
+        ^
+files/CanIf_cfg.c(19): warning: In file included from...
+files/CanIf_Interface.h(69): warning: unused function 'CanIf_uint8Receive_Struct' [-Wunused-function]
+static Std_ReturnType CanIf_uint8Receive_Struct(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber, CanRxMsg RxMessage);
+                      ^
+files/CanIf_Interface.h(90): warning: unused function 'CanIf_uint8Transmit_Struct' [-Wunused-function]
+static Std_ReturnType CanIf_uint8Transmit_Struct( CAN_TypeDef* CANx, CanTxMsg TxMessage ); 
+                      ^
+8 warnings generated.
+compiling CanIf_cfg.c...
+files/GPIO.c(8): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/GPIO.c(8): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/GPIO.c(25): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                                         GPIOA_CRL &= ~((BITS_CLEAR_MASK) << (Copy_u8Pin * BITS_SHIFT_NUMBER));  /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                         ^
+files/GPIO_private.h(60): note: expanded from macro 'BITS_CLEAR_MASK'
+#define  BITS_CLEAR_MASK                        0b1111           /*USED IN MASKING OPERATION TO CLEAR 4 BITS OF MODE*/
+                                                ^
+files/GPIO.c(25): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                         GPIOA_CRL &= ~((BITS_CLEAR_MASK) << (Copy_u8Pin * BITS_SHIFT_NUMBER));  /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                   ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(26): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                         GPIOA_CRL |=  ((Copy_u8Mode)<< (Copy_u8Pin * BITS_SHIFT_NUMBER ));     /*SET 4 BITS OF NEW MODE */
+                                                                                   ~~   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(33): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                                                        GPIOA_CRH &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));  /*CLEAR 4 BITS OD MODE TO SET A NEW ONE */
+                                                                                                        ^
+files/GPIO_private.h(60): note: expanded from macro 'BITS_CLEAR_MASK'
+#define  BITS_CLEAR_MASK                        0b1111           /*USED IN MASKING OPERATION TO CLEAR 4 BITS OF MODE*/
+                                                ^
+files/GPIO.c(33): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                                        GPIOA_CRH &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));  /*CLEAR 4 BITS OD MODE TO SET A NEW ONE */
+                                                                                                  ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(34): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                            GPIOA_CRH |=  ((Copy_u8Mode)<< (Copy_u8Pin * BITS_SHIFT_NUMBER ));          /*SET 4 BITS OF NEW MODE */
+                                                                                      ~~   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(43): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                                          GPIOB_CRL &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));   /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                          ^
+files/GPIO_private.h(60): note: expanded from macro 'BITS_CLEAR_MASK'
+#define  BITS_CLEAR_MASK                        0b1111           /*USED IN MASKING OPERATION TO CLEAR 4 BITS OF MODE*/
+                                                ^
+files/GPIO.c(43): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                          GPIOB_CRL &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));   /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                    ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(44): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                          GPIOB_CRL |=  ((Copy_u8Mode)<< (Copy_u8Pin * BITS_SHIFT_NUMBER ));    /*SET 4 BITS OF NEW MODE */
+                                                                                    ~~   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(51): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                                                        GPIOB_CRH &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));    /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                                        ^
+files/GPIO_private.h(60): note: expanded from macro 'BITS_CLEAR_MASK'
+#define  BITS_CLEAR_MASK                        0b1111           /*USED IN MASKING OPERATION TO CLEAR 4 BITS OF MODE*/
+                                                ^
+files/GPIO.c(51): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                                        GPIOB_CRH &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));    /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                                  ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(52): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                            GPIOB_CRH |=  ((Copy_u8Mode)<< (Copy_u8Pin * BITS_SHIFT_NUMBER ));                  /*SET 4 BITS OF NEW MODE */
+                                                                                      ~~   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(62): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+                                                                                        GPIOC_CRH &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));     /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                                        ^
+files/GPIO_private.h(60): note: expanded from macro 'BITS_CLEAR_MASK'
+#define  BITS_CLEAR_MASK                        0b1111           /*USED IN MASKING OPERATION TO CLEAR 4 BITS OF MODE*/
+                                                ^
+files/GPIO.c(62): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                                        GPIOC_CRH &= ~((BITS_CLEAR_MASK)<< (Copy_u8Pin * BITS_SHIFT_NUMBER));     /*CLEAR 4 BITS OF MODE TO SET A NEW ONE */
+                                                                                                  ~~ ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(63): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                                                            GPIOC_CRH |=  ((Copy_u8Mode)<< (Copy_u8Pin * BITS_SHIFT_NUMBER ));             /*SET 4 BITS OF NEW MODE */
+                                                                                      ~~   ~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(199): warning: implicit conversion loses integer precision: 'uint32' (aka 'unsigned long') to 'uint16' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                   Result_Value = GPIOA_IDR;  break;                      /* Result_Value = PIN VALUE*/
+                                ~ ^~~~~~~~~
+files/GPIO_private.h(26): note: expanded from macro 'GPIOA_IDR'
+#define GPIOA_IDR          *((uint32*)(GPIOA_BASE_ADDRESS+0x08))
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(202): warning: implicit conversion loses integer precision: 'uint32' (aka 'unsigned long') to 'uint16' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                   Result_Value = GPIOB_IDR;  break;                   /*SET VALUE OF A CERTAIN PIN IN PORT B*/
+                                ~ ^~~~~~~~~
+files/GPIO_private.h(39): note: expanded from macro 'GPIOB_IDR'
+#define GPIOB_IDR          *((uint32*)(GPIOB_BASE_ADDRESS+0x08))
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(205): warning: implicit conversion loses integer precision: 'uint32' (aka 'unsigned long') to 'uint16' (aka 'unsigned short') [-Wimplicit-int-conversion]
+                   Result_Value = GPIOC_IDR;  break;                  /*SET VALUE OF A CERTAIN PIN IN PORT C*/
+                                ~ ^~~~~~~~~
+files/GPIO_private.h(51): note: expanded from macro 'GPIOC_IDR'
+#define GPIOC_IDR          *((uint32*)(GPIOC_BASE_ADDRESS+0x08))
+                           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/GPIO.c(257): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT(GPIOA_LCK,LCK_BIT);                    /*CLEAR LCK BIT TO BEGIN WRITING SEQUENCE*/
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/GPIO.c(261): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT  (GPIOA_LCK,LCK_BIT);                            /*WRITE ZERO*/
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/GPIO.c(270): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT(GPIOA_LCK,LCK_BIT);                    /*CLEAR LCK BIT TO BEGIN WRITING SEQUENCE*/
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/GPIO.c(274): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT  (GPIOA_LCK,LCK_BIT);                            /*WRITE ZERO*/
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/GPIO.c(285): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT(GPIOA_LCK,LCK_BIT);                    /*CLEAR LCK BIT TO BEGIN WRITING SEQUENCE*/
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/GPIO.c(289): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                 CLR_BIT  (GPIOA_LCK,LCK_BIT);                            /*WRITE ZERO*/
+                 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+26 warnings generated.
+compiling GPIO.c...
+files/CAN .c(18): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/CAN .c(18): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/CAN .c(20): warning: In file included from...
+files/CAN_Interface.h(193): warning: '/*' within block comment [-Wcomment]
+/*Not used in this version*/
+^
+files/CAN .c(33): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  CAN1->MCR &= ~CAN_MCR_SLEEP;
+            ~~ ^~~~~~~~~~~~~~
+files/CAN .c(241): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+  CAN1->FMR &= ~CAN_FMR_FINIT;     //release init mode for the input filter */
+            ~~ ^~~~~~~~~~~~~~
+files/CAN .c(20): warning: In file included from...
+files/CAN_Interface.h(28): warning: In file included from...
+files/CAN_cfg.h(65): warning: padding size of 'CAN_FilterInitTypeDef' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct
+        ^
+files/CAN .c(276): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CANx->sTxMailBox[Local_u8TransMailboxNumber].TIR |= (TxMessage->IDE << 2) | (TxMessage->RTR << 1 ) ;//setrtr and ide of input fram
+                                                                 ~~ ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN .c(289): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CANx->sTxMailBox[Local_u8TransMailboxNumber].TDTR = (CANx->sTxMailBox[Local_u8TransMailboxNumber].TDTR & (~0x0f))               //set data length
+                                                                                                                       ~  ^~~~~
+files/CAN .c(301): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                CANx->sTxMailBox[Local_u8TransMailboxNumber].TDLR |= (TxMessage->DATA[Local_u8TransDataCounter] << (8 * Local_u8TransDataCounter)); // masking word byte by byte to low register
+                                                                                  ~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN .c(305): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                                CANx->sTxMailBox[Local_u8TransMailboxNumber].TDHR |= (TxMessage->DATA[Local_u8TransDataCounter] << (8 * (Local_u8TransDataCounter - 4)));// masking word byte by byte to high register
+                                                                                  ~~  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN .c(20): warning: In file included from...
+files/CAN_Interface.h(162): warning: padding struct 'CanTxMsg' with 2 bytes to align 'ID' [-Wpadded]
+        uint32 ID;  // message identifier
+               ^
+files/CAN_Interface.h(156): warning: padding size of 'CanTxMsg' with 3 bytes to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+files/CAN_Interface.h(179): warning: padding struct 'CanRxMsg' with 2 bytes to align 'ID' [-Wpadded]
+        uint32 ID;  // message identifier
+               ^
+files/CAN_Interface.h(173): warning: padding size of 'CanRxMsg' with 2 bytes to alignment boundary [-Wpadded]
+typedef struct {
+        ^
+files/CAN .c(448): warning: unused variable 'RxMessage' [-Wunused-variable]
+                CanRxMsg   RxMessage;               // CAN messge   struct  for  receiving
+                           ^
+files/CAN .c(444): warning: no previous prototype for function 'USB_HP_CAN1_TX0_IRQHandler' [-Wmissing-prototypes]
+void USB_HP_CAN1_TX0_IRQHandler (void)
+     ^
+files/CAN .c(444): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void USB_HP_CAN1_TX0_IRQHandler (void)
+^
+static 
+files/CAN .c(491): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        CAN_VoidReceive ( CAN1 , CAN_FIFO0 ,&RxMessage);                       // read the message of FIFO 0
+                          ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN .c(317): note: passing argument to parameter 'CANx' here
+void CAN_VoidReceive(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber, CanRxMsg* RxMessage)
+                                  ^
+files/CAN .c(498): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        CAN_VoidReceive ( CAN1 , CAN_FIFO1,&RxMessage);                  // read the message    of FIFO 1
+                          ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN .c(317): note: passing argument to parameter 'CANx' here
+void CAN_VoidReceive(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber, CanRxMsg* RxMessage)
+                                  ^
+files/CAN .c(482): warning: no previous prototype for function 'USB_LP_CAN1_RX0_IRQHandler' [-Wmissing-prototypes]
+void USB_LP_CAN1_RX0_IRQHandler (void) {
+     ^
+files/CAN .c(482): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void USB_LP_CAN1_RX0_IRQHandler (void) {
+^
+static 
+files/CAN .c(521): warning: passing 'volatile CAN_TypeDef *' to parameter of type 'CAN_TypeDef *' discards qualifiers [-Wincompatible-pointer-types-discards-qualifiers]
+        CAN_VoidReceive ( CAN1 , CAN_FIFO0 ,&RxMessage);                       // read the message of FIFO 0            
+                          ^~~~
+files/CAN_Private.h(102): note: expanded from macro 'CAN1'
+#define CAN1                ((volatile CAN_TypeDef*) CAN1_BASE)
+                            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/CAN .c(317): note: passing argument to parameter 'CANx' here
+void CAN_VoidReceive(CAN_TypeDef* CANx, uint8 Copy_u8FifoNumber, CanRxMsg* RxMessage)
+                                  ^
+20 warnings generated.
+compiling CAN .c...
+files/STK_Program.c(8): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/STK_Program.c(8): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/STK_Program.c(11): warning: non-portable path to file '"STK_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "STK_interface.h"
+         ^~~~~~~~~~~~~~~~~
+         "STK_Interface.h"
+files/STK_Program.c(11): warning: In file included from...
+files/STK_interface.h(83): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/STK_Program.c(12): warning: non-portable path to file '"STK_Private.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "STK_private.h"
+         ^~~~~~~~~~~~~~~
+         "STK_Private.h"
+files/STK_Program.c(12): warning: In file included from...
+files/STK_private.h(38): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/STK_Program.c(13): warning: non-portable path to file '"STK_Config.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "STK_config.h"
+         ^~~~~~~~~~~~~~
+         "STK_Config.h"
+files/STK_Program.c(13): warning: In file included from...
+files/STK_config.h(27): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/STK_Program.c(16): warning: no previous extern declaration for non-static variable 'global_uint32Clk' [-Wmissing-variable-declarations]
+uint32 global_uint32Clk       = 0 ;
+       ^
+files/STK_Program.c(16): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint32 global_uint32Clk       = 0 ;
+^
+files/STK_Program.c(17): warning: no previous extern declaration for non-static variable 'Global_uint8SingleFlag' [-Wmissing-variable-declarations]
+uint8  Global_uint8SingleFlag = 0 ;
+       ^
+files/STK_Program.c(17): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+uint8  Global_uint8SingleFlag = 0 ;
+^
+files/STK_Program.c(29): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CLR_BIT (STK->CTRL , STK_CTRL_CLKSOURCE);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(52): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+                default :    /* Should not be here */      break;
+                ^
+files/STK_Program.c(62): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        CLR_BIT(STK->CTRL , STK_CTRL_ENABLE);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(79): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+                default :    /* Should not be here */      break;
+                ^
+files/STK_Program.c(94): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        CLR_BIT(STK->CTRL , STK_CTRL_ENABLE);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(107): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+                default :    /* Should not be here */      break;
+                ^
+files/STK_Program.c(126): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        CLR_BIT(STK->CTRL , STK_CTRL_ENABLE);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(129): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+        CLR_BIT(STK->CTRL , STK_CTRL_TICKINT);  
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(167): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+                default :    /* Should not be here */      break;
+                ^
+files/STK_Program.c(186): warning: default label in switch which covers all enumeration values [-Wcovered-switch-default]
+                default :    /* Should not be here */      break;
+                ^
+files/STK_Program.c(196): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CLR_BIT(STK->CTRL , STK_CTRL_ENABLE);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(198): warning: implicit conversion changes signedness: 'int' to 'unsigned long' [-Wsign-conversion]
+                CLR_BIT(STK->CTRL , STK_CTRL_TICKINT);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+files/BIT_MATH.h(25): note: expanded from macro 'CLR_BIT'
+#define CLR_BIT(REG,BIT_NUM)         ((REG)  &= ~(1   << BIT_NUM))
+                                             ~~ ^~~~~~~~~~~~~~~~~
+files/STK_Program.c(201): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+files/STK_Program.c(191): warning: no previous prototype for function 'SysTick_Handler' [-Wmissing-prototypes]
+void SysTick_Handler(void)
+     ^
+files/STK_Program.c(191): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void SysTick_Handler(void)
+^
+static 
+files/STK_Program.c(18): warning: no previous extern declaration for non-static variable 'functionCallBack' [-Wmissing-variable-declarations]
+void (* functionCallBack)(void);  
+        ^
+files/STK_Program.c(18): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+void (* functionCallBack)(void);  
+^
+25 warnings generated.
+compiling STK_Program.c...
+files/Alarm.c(15): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/Alarm.c(15): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/Alarm.c(23): warning: In file included from...
+files/STK_Interface.h(83): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/Alarm.c(40): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+    GPIO_VoidSetPinDirection(ALARM_PORT , ALARM_PIN , OUTPUT_MODE ); 
+                                                      ^
+files/Alarm_Private.h(21): note: expanded from macro 'OUTPUT_MODE'
+#define OUTPUT_MODE             OUTPUT_10MHZ_PP
+                                ^
+files/GPIO_interface.h(54): note: expanded from macro 'OUTPUT_10MHZ_PP'
+#define       OUTPUT_10MHZ_PP             0b0001
+                                          ^
+4 warnings generated.
+compiling Alarm.c...
+files/UltraSensor.c(15): warning: In file included from...
+files/Std_Types.h(11): warning: In file included from...
+files/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/UltraSensor.c(15): warning: In file included from...
+files/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+files/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+files/UltraSensor.c(23): warning: non-portable path to file '"STK_Interface.h"'; specified path differs in case from file name on disk [-Wnonportable-include-path]
+#include "STK_interface.h"
+         ^~~~~~~~~~~~~~~~~
+         "STK_Interface.h"
+files/UltraSensor.c(23): warning: In file included from...
+files/STK_interface.h(83): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+files/UltraSensor.c(38): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+    GPIO_VoidSetPinDirection(TRIGGER_PORT,TRIGGER_PIN , OUTPUT_MODE); 
+                                                        ^
+files/UltraSensor_Private.h(21): note: expanded from macro 'OUTPUT_MODE'
+#define OUTPUT_MODE               OUTPUT_10MHZ_PP
+                                  ^
+files/GPIO_interface.h(54): note: expanded from macro 'OUTPUT_10MHZ_PP'
+#define       OUTPUT_10MHZ_PP             0b0001
+                                          ^
+files/UltraSensor.c(39): warning: binary integer literals are a GNU extension [-Wgnu-binary-literal]
+    GPIO_VoidSetPinDirection(ECHO_PORT,ECHO_PIN , INPUT_MODE); 
+                                                  ^
+files/UltraSensor_Private.h(22): note: expanded from macro 'INPUT_MODE'
+#define INPUT_MODE                INPUT_PULL_UP_DOWN 
+                                  ^
+files/GPIO_interface.h(50): note: expanded from macro 'INPUT_PULL_UP_DOWN'
+#define        INPUT_PULL_UP_DOWN        0b1000
+                                         ^
+files/UltraSensor.c(110): warning: no newline at end of file [-Wnewline-eof]
+/***********************END OF FUNCTION************************/                                                                                                                                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ^
+7 warnings generated.
+compiling UltraSensor.c...
+RTE-GIT/Rte.c(10): warning: In file included from...
+RTE-GIT/Rte_Type.h(11): warning: In file included from...
+RTE-GIT/Std_Types.h(11): warning: In file included from...
+RTE-GIT/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/Rte.c(10): warning: In file included from...
+RTE-GIT/Rte_Type.h(11): warning: In file included from...
+RTE-GIT/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+RTE-GIT/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+RTE-GIT/Rte.c(10): warning: In file included from...
+RTE-GIT/Rte_Type.h(32): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/Rte.c(11): warning: In file included from...
+RTE-GIT/Rte_Buzzer.h(44): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/Rte.c(12): warning: In file included from...
+RTE-GIT/Rte_DistanceSensor.h(42): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+5 warnings generated.
+compiling Rte.c...
+RTE-GIT/DistanceSensor.c(14): warning: In file included from...
+RTE-GIT/Rte_DistanceSensor.h(11): warning: In file included from...
+RTE-GIT/Rte_Type.h(11): warning: In file included from...
+RTE-GIT/Std_Types.h(11): warning: In file included from...
+RTE-GIT/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/DistanceSensor.c(14): warning: In file included from...
+RTE-GIT/Rte_DistanceSensor.h(11): warning: In file included from...
+RTE-GIT/Rte_Type.h(11): warning: In file included from...
+RTE-GIT/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+RTE-GIT/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+RTE-GIT/DistanceSensor.c(14): warning: In file included from...
+RTE-GIT/Rte_DistanceSensor.h(11): warning: In file included from...
+RTE-GIT/Rte_Type.h(32): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/DistanceSensor.c(14): warning: In file included from...
+RTE-GIT/Rte_DistanceSensor.h(42): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+4 warnings generated.
+compiling DistanceSensor.c...
+RTE-GIT/Buzzer.c(14): warning: In file included from...
+RTE-GIT/Rte_Buzzer.h(11): warning: In file included from...
+RTE-GIT/Rte_Type.h(11): warning: In file included from...
+RTE-GIT/Std_Types.h(11): warning: In file included from...
+RTE-GIT/Compiler.h(52): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/Buzzer.c(14): warning: In file included from...
+RTE-GIT/Rte_Buzzer.h(11): warning: In file included from...
+RTE-GIT/Rte_Type.h(11): warning: In file included from...
+RTE-GIT/Std_Types.h(15): warning: 'COMPILER_MODULE_ID' macro redefined [-Wmacro-redefined]
+#define    COMPILER_MODULE_ID                     0x031u
+           ^
+RTE-GIT/Compiler.h(11): note: previous definition is here
+#define    COMPILER_MODULE_ID                     0x033u
+           ^
+RTE-GIT/Buzzer.c(14): warning: In file included from...
+RTE-GIT/Rte_Buzzer.h(11): warning: In file included from...
+RTE-GIT/Rte_Type.h(32): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+RTE-GIT/Buzzer.c(14): warning: In file included from...
+RTE-GIT/Rte_Buzzer.h(44): warning: no newline at end of file [-Wnewline-eof]
+#endif
+      ^
+4 warnings generated.
+compiling Buzzer.c...
+assembling startup_stm32f10x_md.s...
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): warning: no previous extern declaration for non-static variable 'AHBPrescTable' [-Wmissing-variable-declarations]
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+            ^
+RTE/Device/STM32F103C8/system_stm32f10x.c(167): note: declare 'static' if the variable is not intended to be used outside of this translation unit
+__I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};
+    ^
+1 warning generated.
+compiling system_stm32f10x.c...
+linking...
+Program Size: Code=2200 RO-data=252 RW-data=0 ZI-data=1656  
+".\Objects\App2.axf" - 0 Error(s), 147 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.7.0.pack
+                ARM.CMSIS.5.7.0
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.4.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.3.0.pack
+                Keil.STM32F1xx_DFP.2.3.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+   * Component: Startup Version: 1.0.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\Device\STM32F103C8
+  .\RTE\_stm32f103
+  C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include
+  C:\Users\osama hejazi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.4.0
+
+   * Component: Keil::Device:Startup:1.0.0
+      Include file:  RTE_Driver\Config\RTE_Device.h
+      Source file:   Device\Source\system_stm32f10x.c
+      Source file:   Device\Source\ARM\STM32F1xx_OPT.s
+      Source file:   Device\Source\ARM\startup_stm32f10x_md.s
+Build Time Elapsed:  00:00:08
+</pre>
+</body>
+</html>
