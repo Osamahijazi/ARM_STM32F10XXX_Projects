@@ -10,7 +10,6 @@
 	
  int main (void)
  {
- 
 
 /*FOR BIT RATE 500KHZ , PRESCALE = 1, SJW = 0 ,SEG1 = 11 , SEG2 = 4 , SAMPLE PIONT AT 87.5 , BTR=  0x00140001 */	 
 CAN_InitTypeDef        CAN_InitStruct         =	{ 1 , CAN_Mode_Normal   , 0 , 11 , 4, DISABLE , DISABLE , DISABLE , DISABLE , DISABLE , DISABLE } ;
