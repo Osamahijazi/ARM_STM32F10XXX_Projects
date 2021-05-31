@@ -7,8 +7,6 @@
 #include "USART_Interface.h"
 #include "CAN.h"
 		
-	
-
  int main (void)
  {
  
