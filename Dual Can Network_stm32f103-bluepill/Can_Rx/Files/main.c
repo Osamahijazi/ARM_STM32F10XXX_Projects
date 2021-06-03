@@ -5,9 +5,7 @@
 #include "STK_Interface.h"
 #include "NVIC_Interface.h"
 #include "USART_Interface.h"
-#include "CAN.h"
-		
-	
+#include "CAN.h" 	
  int main (void)
  {
  
