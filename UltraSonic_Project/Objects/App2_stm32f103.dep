@@ -1,163 +1,0 @@
-Dependencies for Project 'App2', Target 'stm32f103': (DO NOT MODIFY !)
-CompilerVersion: 6140000::V6.14::ARMCLANG
-F (.\files\CAN .c)(0x609801E8)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o "./objects/can .o" -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\CAN_Interface.h)(0x60958EDC)
-I (files\CAN_Private.h)(0x60958728)
-I (files\CAN_cfg.h)(0x608B64A5)
-F (.\files\CAN_cfg.c)(0x60B00602)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/can_cfg.o -MD)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\CAN_Interface.h)(0x60958EDC)
-I (files\CAN_Private.h)(0x60958728)
-I (files\CAN_cfg.h)(0x608B64A5)
-F (.\files\CanIf.c)(0x609921AB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/canif.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\CanIf_Interface.h)(0x6099214F)
-I (files\CAN_Interface.h)(0x60958EDC)
-I (files\CAN_Private.h)(0x60958728)
-I (files\CAN_cfg.h)(0x608B64A5)
-I (files\CanIf_Private.h)(0x60969B16)
-I (files\CanIf_cfg.h)(0x608AEEDA)
-F (.\files\CanIf_cfg.c)(0x60B005E2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/canif_cfg.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\CanIf_Interface.h)(0x6099214F)
-I (files\CAN_Interface.h)(0x60958EDC)
-I (files\CAN_Private.h)(0x60958728)
-I (files\CAN_cfg.h)(0x608B64A5)
-I (files\CanIf_Private.h)(0x60969B16)
-I (files\CanIf_cfg.h)(0x608AEEDA)
-F (.\files\GPIO.c)(0x60AB77AF)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/gpio.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\GPIO_private.h)(0x6089AB40)
-I (files\GPIO_interface.h)(0x6089AB40)
-I (files\GPIO_cfg.h)(0x6089AB20)
-F (.\files\main.c)(0x60B11D3C)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/main.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\RCC_interface.h)(0x6089AD09)
-I (files\GPIO_interface.h)(0x6089AB40)
-I (files\STK_Interface.h)(0x609588CA)
-I (files\Rte_DistanceSensor.h)(0x60B10DCF)
-I (files\Rte_Type.h)(0x60B01E95)
-I (files\UltraSensor_Interface.h)(0x60AFFF4D)
-I (files\Rte_Buzzer.h)(0x60B10DC0)
-I (files\Alarm_Interface.h)(0x60B01D7C)
-F (.\files\RCC.c)(0x6089AD73)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/rcc.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\RCC_private.h)(0x6089AD72)
-I (files\RCC_interface.h)(0x6089AD09)
-I (files\RCC_cfg.h)(0x6089AB40)
-F (.\files\STK_Program.c)(0x609588A2)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/stk_program.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\STK_interface.h)(0x609588CA)
-I (files\STK_private.h)(0x609588B3)
-I (files\STK_config.h)(0x609588CC)
-F (.\files\Alarm.c)(0x60B11351)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/alarm.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\Alarm_Interface.h)(0x60B01D7C)
-I (files\Alarm_Private.h)(0x60B01D8D)
-I (files\Alarm_cfg.h)(0x60B01D7A)
-I (files\GPIO_interface.h)(0x6089AB40)
-I (files\STK_Interface.h)(0x609588CA)
-F (.\files\UltraSensor.c)(0x60B0E6DA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/ultrasensor.o -MD)
-I (files\BIT_MATH.h)(0x6089A19F)
-I (files\Std_Types.h)(0x6089AA87)
-I (files\Compiler.h)(0x6089A19F)
-I (files\Platform_Types.h)(0x6089A19F)
-I (files\UltraSensor_Interface.h)(0x60AFFF4D)
-I (files\UltraSensor_Private.h)(0x60AFBBD6)
-I (files\UltraSensor_Cfg.h)(0x60AFFEC1)
-I (files\GPIO_interface.h)(0x6089AB40)
-I (files\STK_interface.h)(0x609588CA)
-F (.\files\CAN_cfg.h)(0x608B64A5)()
-F (.\files\CAN_Interface.h)(0x60958EDC)()
-F (.\files\CAN_Private.h)(0x60958728)()
-F (.\files\CanIf_cfg.h)(0x608AEEDA)()
-F (.\files\CanIf_Interface.h)(0x6099214F)()
-F (.\files\CanIf_Private.h)(0x60969B16)()
-F (.\files\Compiler.h)(0x6089A19F)()
-F (.\files\GPIO_cfg.h)(0x6089AB20)()
-F (.\files\GPIO_interface.h)(0x6089AB40)()
-F (.\files\GPIO_private.h)(0x6089AB40)()
-F (.\files\Platform_Types.h)(0x6089A19F)()
-F (.\files\RCC_cfg.h)(0x6089AB40)()
-F (.\files\RCC_interface.h)(0x6089AD09)()
-F (.\files\RCC_private.h)(0x6089AD72)()
-F (.\files\Std_Types.h)(0x6089AA87)()
-F (.\files\STK_Config.h)(0x609588CC)()
-F (.\files\STK_Interface.h)(0x609588CA)()
-F (.\files\STK_Private.h)(0x609588B3)()
-F (.\files\BIT_MATH.h)(0x6089A19F)()
-F (.\files\UltraSensor_Interface.h)(0x60AFFF4D)()
-F (.\files\UltraSensor_Cfg.h)(0x60AFFEC1)()
-F (.\files\UltraSensor_Private.h)(0x60AFBBD6)()
-F (.\files\Alarm_cfg.h)(0x60B01D7A)()
-F (.\files\Alarm_Interface.h)(0x60B01D7C)()
-F (.\files\Alarm_Private.h)(0x60B01D8D)()
-F (.\RTE-GIT\Rte.c)(0x60B01C67)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/rte.o -MD)
-I (RTE-GIT\Rte_Type.h)(0x60B01E95)
-I (RTE-GIT\Std_Types.h)(0x6089AA87)
-I (RTE-GIT\Compiler.h)(0x6089A19F)
-I (RTE-GIT\Platform_Types.h)(0x6089A19F)
-I (RTE-GIT\BIT_MATH.h)(0x6089A19F)
-I (RTE-GIT\Rte_Buzzer.h)(0x60B11079)
-I (RTE-GIT\Alarm_Interface.h)(0x60B01D7C)
-I (RTE-GIT\Rte_DistanceSensor.h)(0x60B10DCF)
-I (RTE-GIT\UltraSensor_Interface.h)(0x60AFFF4D)
-F (.\RTE-GIT\Rte_Type.h)(0x60B01E95)()
-F (.\RTE-GIT\Rte_Buzzer.h)(0x60B11079)()
-F (.\RTE-GIT\Rte_DistanceSensor.h)(0x60B10DCF)()
-F (.\RTE-GIT\DistanceSensor.c)(0x60B10E95)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/distancesensor.o -MD)
-I (RTE-GIT\Rte_DistanceSensor.h)(0x60B10DCF)
-I (RTE-GIT\Rte_Type.h)(0x60B01E95)
-I (RTE-GIT\Std_Types.h)(0x6089AA87)
-I (RTE-GIT\Compiler.h)(0x6089A19F)
-I (RTE-GIT\Platform_Types.h)(0x6089A19F)
-I (RTE-GIT\BIT_MATH.h)(0x6089A19F)
-I (RTE-GIT\UltraSensor_Interface.h)(0x60AFFF4D)
-F (.\RTE-GIT\Buzzer.c)(0x60B11301)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/buzzer.o -MD)
-I (RTE-GIT\Rte_Buzzer.h)(0x60B11079)
-I (RTE-GIT\Rte_Type.h)(0x60B01E95)
-I (RTE-GIT\Std_Types.h)(0x6089AA87)
-I (RTE-GIT\Compiler.h)(0x6089A19F)
-I (RTE-GIT\Platform_Types.h)(0x6089A19F)
-I (RTE-GIT\BIT_MATH.h)(0x6089A19F)
-I (RTE-GIT\Alarm_Interface.h)(0x60B01D7C)
-F (RTE\Device\STM32F103C8\RTE_Device.h)(0x59283406)()
-F (RTE\Device\STM32F103C8\startup_stm32f10x_md.s)(0x58258CCC)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto -c-gdwarf-3 -Wa,armasm,--pd,"__EVAL SETA 1"-I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-Wa,armasm,--pd,"__UVISION_VERSION SETA 531" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./objects/startup_stm32f10x_md.o)
-F (RTE\Device\STM32F103C8\system_stm32f10x.c)(0x58258CCC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-D__EVAL -gdwarf-3 -O1 -ffunction-sections -Weverything -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -I./RTE/Device/STM32F103C8-I./RTE/_stm32f103-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/ARM/CMSIS/5.7.0/CMSIS/Core/Include"-I"C:/Users/osama hejazi/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.3.0/Device/Include"-D__UVISION_VERSION="531" -D_RTE_ -DSTM32F10X_MD -D_RTE_-o ./objects/system_stm32f10x.o -MD)
-I (C:\Users\osama hejazi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\stm32f10x.h)(0x58258CCC)
-I (RTE\_stm32f103\RTE_Components.h)(0x60AB603D)
-I (C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\core_cm3.h)(0x5E8F2582)
-I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x5ED66044)
-I (C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_version.h)(0x5E8F2582)
-I (C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_compiler.h)(0x5E835B22)
-I (C:\Users\osama hejazi\AppData\Local\Arm\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include\cmsis_armclang.h)(0x5E8F2582)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_compat.h)(0x5E0D174C)
-I (C:\Keil_v5\ARM\ARMCLANG\include\arm_acle.h)(0x5E0D1778)
-I (C:\Users\osama hejazi\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include\system_stm32f10x.h)(0x58258CCC)
